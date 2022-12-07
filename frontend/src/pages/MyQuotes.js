@@ -46,7 +46,7 @@ function MyQuotes() {
 
       } )
       
-      .map((quote) => <QuoteCard key={quote._id} {...quote} />  )} </div>
+      .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
       <div><h2>Users</h2><AddQuote refreshQuotes={getAllQuotes} /></div>
        
     </div>
