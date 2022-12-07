@@ -1,12 +1,72 @@
+* {
+    margin: 0;
+}
+
 .logo {
     
-    margin-top: 10px;
-    margin-right: 50px;
-    width: 45px;
-    height:45px
+    margin: auto;
+    width: auto;
+    height:75px;
+    cursor: pointer;    
+
 }
 .navbar{
 
 
+    
+}
+
+li {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #1DA1F2;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 10px;
+    margin-bottom: 10px;
+    background-color: #1DA1F2;
+}
+
+.list {
+    list-style: none;
+}
+
+.list li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.list li a{
+    transition: all 0.3s ease 0s;
+}
+
+.list li a:hover{
+    color: rgb(82, 133, 133);
+}
+
+.list button {
+    padding: 9px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: #1DA1F2;
+
+
+}
+
+.list button:hover{
+    color: #dae4eb;
+}
+
+#username{
+    color: beige;
+    background-color: rgb(38, 66, 75);
     
 }
