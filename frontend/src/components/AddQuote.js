@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 const API_URL = "http://localhost:5005";
 
-function AddQuote(props) {
+function AddQuote({refreshQuotes}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const {user} = useContext(AuthContext)
@@ -32,7 +32,7 @@ function AddQuote(props) {
         // Reset the state
         setTitle("");
         setDescription("");
-        props.refreshQuotes();
+        refreshQuotes();
       })
       .catch((error) => console.log(error));
   };
