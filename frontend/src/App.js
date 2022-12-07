@@ -5,8 +5,9 @@ import HomePage from "./pages/HomePage";
 import MyQuotes from "./pages/MyQuotes";
 import QuoteDetails from "./pages/QuoteDetails";
 import EditQuote from "./pages/EditQuote";
-
-
+import React, { useEffect, useState } from "react";
+import Data from "./pages/Quotes.json"
+import KanyeQuotes from "./pages/KanyeQuotes"
 
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
@@ -16,14 +17,18 @@ import IsAnon from "./components/IsAnon";
 
 
 function App() {
+ 
 
+  const [quotes, setQuotes] = useState(Data)
 
   return (
     <div className="App">
       <Navbar />
       
       <Routes>      
+    
         <Route path="/" element={<HomePage />} />
+        <Route path="/kanye-quotes" element={<KanyeQuotes quotesKanye={quotes}/>} />
 
         <Route
           path="/my-quotes"
