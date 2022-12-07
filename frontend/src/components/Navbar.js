@@ -15,15 +15,20 @@ function Navbar() {
       <Link to="/">
         <img className="logo" src={logo} alt="logo" />
       </Link>
+      
+
+      <input type="search" placeholder="Search..." className="search"/>
 
       {isLoggedIn && (
         <>
 
         <ul className="list">
+
+        
           <li>
-          <Link to="/my-quotes">
-            <button>My quotes</button>
-          </Link>
+            <Link to="/my-quotes">
+              <button>My quotes</button>
+            </Link>
           </li>
          
           <li>
@@ -31,9 +36,9 @@ function Navbar() {
           </li>
 
           <li>
-          <Link to="/my-quotes">
-             <button id="username">{user && user.name}</button>
-          </Link>
+            <Link to="/my-quotes">
+              <button id="username">{user && user.name}</button>
+            </Link>
           </li>
         </ul>
           

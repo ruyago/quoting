@@ -31,15 +31,7 @@ function HomePage() {
 {!isLoggedIn && (
   <>
     <h3>Add your own quotes and discover the favourite of your friends.</h3>
-    <br />
-    <Link to="/signup">
-      {" "}
-      <button>Sign Up</button>{" "}
-    </Link>
-    <Link to="/login">
-      {" "}
-      <button>Login</button>{" "}
-    </Link>
+
   </>
 )}
 

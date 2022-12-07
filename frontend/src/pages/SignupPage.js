@@ -52,13 +52,13 @@ function SignupPage(props) {
         <label>Name:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign Up</button>  
       </form>
 
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link to={"/login"} className="link"> Login</Link>
     </div>
   )
 }

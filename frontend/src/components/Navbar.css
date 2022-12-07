@@ -6,7 +6,7 @@
     
     margin: auto;
     width: auto;
-    height:75px;
+    height:80px;
     cursor: pointer;    
 
 }
@@ -20,7 +20,7 @@ li {
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
-    background-color: #1DA1F2;
+    background-color: #1da0f200;
 
 }
 
@@ -28,9 +28,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1px 10px;
+    padding: 0px 30px;
     margin-bottom: 10px;
-    background-color: #1DA1F2;
+    height: 50px;
+    background-color: #9cc0d37e;
 }
 
 .list {
@@ -39,25 +40,25 @@ header {
 
 .list li{
     display: inline-block;
-    padding: 0px 20px;
+    padding: 20px;
 }
 
 .list li a{
     transition: all 0.3s ease 0s;
 }
 
-.list li a:hover{
-    color: rgb(82, 133, 133);
-}
 
 .list button {
-    padding: 9px 25px;
+    color: rgb(5, 29, 50);
+    font-weight: 300;
+    font-size: 20px;
+    padding-top: 17px;
+    padding-left: 30px;
+    padding-right: 30px;
     border: none;
-    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    background-color: #1DA1F2;
-
+    background-color: #1da0f200;
 
 }
 
@@ -66,7 +67,14 @@ header {
 }
 
 #username{
-    color: beige;
-    background-color: rgb(38, 66, 75);
-    
+    color: rgb(232, 236, 245);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.search{
+    border-radius: 8px;
+    border: 0;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.681);
 }
