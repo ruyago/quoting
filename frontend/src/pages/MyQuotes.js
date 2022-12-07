@@ -3,12 +3,16 @@ import axios from "axios";
 import AddQuote from "../components/AddQuote";
 import QuoteCard from "../components/QuoteCard";
 import myQuotes from "../pages/MyQuotes.css"
+import { AuthContext } from "../context/auth.context";
+import { useContext } from "react";
+
 
 const API_URL = "http://localhost:5005";
 
 
 function MyQuotes() {
   const [quotes, setQuotes] = useState([]);
+  const {user} = useContext(AuthContext)
 
   const getAllQuotes = () => {
     // Get the token from the localStorage
@@ -34,9 +38,16 @@ function MyQuotes() {
   return (
     <div className="myQuotesPage">
       
-      <AddQuote refreshQuotes={getAllQuotes} />
+      <div><h2>Post</h2><AddQuote refreshQuotes={getAllQuotes} /></div>
       
-      { quotes.map((quote) => <QuoteCard key={quote._id} {...quote} />  )} 
+      <div><h2>Quotes</h2>{ quotes.filter((quote) =>{
+    
+        return quote.owner === user.name
+
+      } )
+      
+      .map((quote) => <QuoteCard key={quote._id} {...quote} />  )} </div>
+      <div><h2>Users</h2><AddQuote refreshQuotes={getAllQuotes} /></div>
        
     </div>
   );

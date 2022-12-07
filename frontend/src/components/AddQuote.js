@@ -1,16 +1,22 @@
+
+import { AuthContext } from "../context/auth.context";
 import { useState } from "react";
 import axios from "axios";
+import { useContext } from "react";
 
 const API_URL = "http://localhost:5005";
 
 function AddQuote(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
+  const {user} = useContext(AuthContext)
+  console.log(user.name)
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description };
+    let owner = user.name
+    const requestBody = { title, description, owner };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');

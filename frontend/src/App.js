@@ -21,13 +21,17 @@ function App() {
 
   const [quotes, setQuotes] = useState(Data)
 
+
+  
+
+
   return (
     <div className="App">
       <Navbar />
       
       <Routes>      
     
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage  quotes={quotes}/>} />
         <Route path="/kanye-quotes" element={<KanyeQuotes quotesKanye={quotes}/>} />
 
         <Route
