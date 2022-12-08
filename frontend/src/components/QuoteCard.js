@@ -1,11 +1,17 @@
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
-const API_URL = "http://localhost:5005";
+import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
+const API_URL = "http://localhost:5005";
 
 // We are deconstructing props object directly in the parentheses of the function
 function QuoteCard ( { title, description, _id, owner, refresh} ) {
+  
+  const {user} = useContext(AuthContext)
 
+  const [quotes, setQuotes] = useState([]);
   
   
   const deleteQuote = () => {
@@ -30,7 +36,8 @@ function QuoteCard ( { title, description, _id, owner, refresh} ) {
         </Link>
       <p style={{ maxWidth: "400px" }}>{description} </p>
       <p>@{owner} </p>
-      <button onClick={deleteQuote}>Delete Quote</button>
+     {owner === user.name ? <button onClick={deleteQuote}>Delete Quote</button> : <></>}
+     
     </div>
   );
 }

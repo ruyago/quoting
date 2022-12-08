@@ -13,13 +13,13 @@ function UsersList({names, setSelectedUser}) {
 
 
   return (
-    <div className="UsersList">
-       <p>{names && names
+   
+       <div>{names && names
        .filter((name) =>{return name.name !== user.name} )
        .map((user)=>(
-        <button onClick={() => {setSelectedUser(user.name)}}><div>{user.name}</div></button>
-         )) }</p> 
-    </div>
+        <div className="UsersList"><button onClick={() => {setSelectedUser(user.name)}}>{user.name}</button></div>
+         )) }</div> 
+    
   )
 }
 
