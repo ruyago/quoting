@@ -32,7 +32,7 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/movies-quotes" element={<MoviesQuotes quotesMovies={quotes}/>} />
+        <Route path="/movies-quotes" element={<MoviesQuotes quotes={quotes}/>} />
 
         <Route
           path="/my-quotes"

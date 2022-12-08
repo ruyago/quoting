@@ -8,6 +8,7 @@ import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 
 
+
 const API_URL = "http://localhost:5005";
 
 
@@ -52,13 +53,14 @@ function MyQuotes() {
     getAllUsers();
   }, [] );
 
+ 
   
   return (
     <div className="myQuotesPage">
-      
+
       <div><h2>Post</h2><AddQuote refreshQuotes={getAllQuotes} /></div>
       
-      <div><h2>Quotes</h2>{ filtered.length === 0 ? <div> {user.name} didnt add any quotes. </div> : filtered
+      <div><h2>Quotes</h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
       .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
 
       <div><h2>Users</h2><UsersList names={names} setSelectedUser={setSelectedUser}/></div>
