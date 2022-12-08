@@ -5,7 +5,7 @@ import booksQuotes from "../assets/booksQuotes.jpg";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
 import Homepage from "./HomePage.css"
-import KanyeQuotes from "./KanyeQuotes";
+
 
 
 function HomePage({quotes}) {
