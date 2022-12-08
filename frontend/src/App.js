@@ -7,7 +7,7 @@ import QuoteDetails from "./pages/QuoteDetails";
 import EditQuote from "./pages/EditQuote";
 import React, { useEffect, useState } from "react";
 import Data from "./pages/Quotes.json"
-import KanyeQuotes from "./pages/KanyeQuotes"
+import MoviesQuotes from "./pages/MoviesQuotes"
 
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
@@ -32,7 +32,7 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/kanye-quotes" element={<KanyeQuotes quotesKanye={quotes}/>} />
+        <Route path="/movies-quotes" element={<MoviesQuotes quotesMovies={quotes}/>} />
 
         <Route
           path="/my-quotes"
