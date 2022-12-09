@@ -8,6 +8,9 @@ import EditQuote from "./pages/EditQuote";
 import React, { useEffect, useState } from "react";
 import Data from "./pages/Quotes.json"
 import MoviesQuotes from "./pages/MoviesQuotes"
+import ApiQuotes from "./pages/ApiQuotes"
+
+import axios from "axios";
 
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
@@ -20,7 +23,16 @@ function App() {
  
 
   const [quotes, setQuotes] = useState(Data)
+  const [apiQuotes, setApiQuotes] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get("https://ih-beers-api2.herokuapp.com/beers")
+      .then((response) => {
+        setApiQuotes(response.data);
+      });
+  }, []);
+  console.log(apiQuotes)
 
   
 
@@ -36,7 +48,8 @@ function App() {
 
         <Route
           path="/my-quotes"
-          element={ <IsPrivate> <MyQuotes /> </IsPrivate> } 
+          element={ <IsPrivate> <MyQuotes apiQuotes={apiQuotes} /> </IsPrivate> } 
+          
         />
 
 
