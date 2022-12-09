@@ -6,18 +6,21 @@ import UsersList from "../pages/UsersList";
 import myQuotes from "../pages/MyQuotes.css"
 import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import ApiQuotes from "../pages/ApiQuotes";
 
 
 
 const API_URL = "http://localhost:5005";
 
 
-function MyQuotes() {
+function MyQuotes({apiQuotes}) {
   const {user} = useContext(AuthContext)
 
   const [quotes, setQuotes] = useState([]);
   const [names, setNames] = useState([])
   const [selectedUser, setSelectedUser] = useState(user.name)
+
 
   const getAllQuotes = () => {
     // Get the token from the localStorage
@@ -60,10 +63,15 @@ function MyQuotes() {
 
       <div><h2>Post</h2><AddQuote refreshQuotes={getAllQuotes} /></div>
       
-      <div><h2>Quotes</h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
+      <div><h2>Users Quotes</h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
       .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
 
-      <div><h2>Users</h2><UsersList names={names} setSelectedUser={setSelectedUser}/></div>
+      <div><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+
+      <div>
+      <h2>Users</h2>
+      <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
+      <UsersList names={names} setSelectedUser={setSelectedUser}/></div>
        
     </div>
   );
