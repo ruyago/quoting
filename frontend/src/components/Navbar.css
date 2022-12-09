@@ -31,7 +31,8 @@ header {
     padding: 0px 30px;
     margin-bottom: 10px;
     height: 50px;
-    background-color: #9cc0d37e;
+    background-color: #608dd5;
+    position: ;
 }
 
 .list {
@@ -63,7 +64,7 @@ header {
 }
 
 .list button:hover{
-    color: #dae4eb;
+    color: #ffffff;
 }
 
 #username{

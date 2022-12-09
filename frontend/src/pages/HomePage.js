@@ -24,21 +24,13 @@ singleQuote && console.log(singleQuote)
     <div>
       <h1>Quoting Life</h1>
       <h3>{singleQuote}</h3>
+      <br />
 
-{isLoggedIn && (
-  <>
-    <Link to="/my-quotes">
-      <button>My quotes</button>
-    </Link>
-
-    <button onClick={logOutUser}>Logout</button>
-  </>
-)}
 
 {!isLoggedIn && (
   <>
     <h3>Add your own quotes and discover the favourite of your friends.</h3>
-
+    
   </>
 )}
 
