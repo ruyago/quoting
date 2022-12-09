@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import QuoteCard from "../components/QuoteCard";
 import axios from "axios";
+
 const API_URL = "http://localhost:5005";
 
 
 const MoviesQuotes = ({ quotesMovies, refresh }) => {
 
-  const [quotesM, setQuotesM] = useState([]);
+  const [quote, setQuote] = useState([]);
 
   const deleteQuote = () => {
     const storedToken = localStorage.getItem('authToken'); 
@@ -24,11 +25,21 @@ const MoviesQuotes = ({ quotesMovies, refresh }) => {
       .catch((err) => console.log(err));
   };  
 
+  useEffect (() => {
+axios.get("https://api.kanye.rest")
+.then( quote => {
+setQuote(quote.data.quote)
+
+
+})
+  }, [])
+
 
 
 
     console.log(MoviesQuotes);
     return (<div>
+      <h1>{quote}</h1>
     {quotesMovies.map((quote) => {
       return (
         <div key={quote._id}>
