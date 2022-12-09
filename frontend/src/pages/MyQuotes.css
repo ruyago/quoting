@@ -6,20 +6,32 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 10%
-}
-
-.UserContainer{
+    padding: 0 10%;
+    
     
 }
 
+.Quotes{
+    display: flex;
+    justify-content: center;
+}
+
+.QuoteCards {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 15px;
+}
 .UserList {
-    background-color: rgba(55, 135, 135, 0);
+    background-color: rgba(104, 121, 121, 0);
+   
     
 }
 
+.UserContainer {
+    border-right: 1px solid rgb(99, 99, 99);
+}
 .UserList button{
-    background-color: #a0a0a0;
+    background-color: #ffffff;
     border: 0;
     border-radius: 10px;
     margin-top: 20px;
@@ -30,11 +42,16 @@ h2 {
 }
 
 .UserList button:hover{
-    background-color: rgb(243, 241, 241);
+    background-color: rgb(130, 130, 130);
 }
 
 .ButtonMyQuotes{
     background-color: aqua;
     border: 0;
     
+}
+
+.QuotesOfTheDay {
+    border-left: 1px solid rgb(99, 99, 99);
+    padding-left: 10px;
 }

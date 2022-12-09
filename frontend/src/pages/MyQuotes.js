@@ -21,6 +21,7 @@ function MyQuotes({apiQuotes}) {
   const [names, setNames] = useState([])
   const [selectedUser, setSelectedUser] = useState(user.name)
 
+
   const getAllQuotes = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -36,7 +37,7 @@ function MyQuotes({apiQuotes}) {
       .catch((error) => console.log(error));
   };
 
-  let filtered =  quotes.filter((quote) =>{return quote.owner === selectedUser} )
+  const filtered = quotes.filter((quote) =>{return quote.owner === selectedUser} )
   const getAllUsers = () => {
     
     axios
@@ -69,12 +70,14 @@ function MyQuotes({apiQuotes}) {
       </div>
       
       <div><AddQuote refreshQuotes={getAllQuotes} />
-      <div><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
-      .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
-</div>
+
+        <div className="QuoteCards"><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
+        .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
+      </div>
       
      
-      <div><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+      <div className="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+
 
       
        
