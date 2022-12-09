@@ -55,7 +55,7 @@ function MyQuotes({apiQuotes}) {
     getAllUsers();
   }, [] );
 
- 
+ //updateewrwr
   
   return (
     <div className="myQuotesPage">
@@ -68,19 +68,15 @@ function MyQuotes({apiQuotes}) {
         </div>
       </div>
       
-
-      <div><h2>Users Quotes</h2>
-      { filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> :
-       filtered.map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
-
+      <div><AddQuote refreshQuotes={getAllQuotes} />
+      <div><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
+      .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
+</div>
+      
+     
       <div><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
 
-      <div>
-      <h2>Users</h2>
-      <button onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
-      <button onClick={() => {filtered = quotes}}>All quotes</button>   
-         <UsersList names={names} setSelectedUser={setSelectedUser}/></div>
-
+      
        
     </div>
   );
