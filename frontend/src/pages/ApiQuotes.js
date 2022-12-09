@@ -10,7 +10,7 @@ const ApiQuotes = ({ apiQuotes }) => {
               <div key={apiQuote._id}>
 
                
-                <h3>{apiQuote.name}</h3>
+                <h3>hello</h3>
                 
               </div>
             );
@@ -19,4 +19,4 @@ const ApiQuotes = ({ apiQuotes }) => {
       );
     };
     
-    export default ApiQuotes;
+export default ApiQuotes;
