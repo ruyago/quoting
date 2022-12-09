@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import Favourite from "../components/Favourite";
 
 const API_URL = "http://localhost:5005";
 
@@ -36,6 +37,7 @@ function QuoteCard ( { title, description, _id, owner, refresh} ) {
         </Link>
       <p style={{ maxWidth: "400px" }}>{description} </p>
       <p>@{owner} </p>
+      {owner !== user.name ? <button onClick={Favourite}>Favourite Quote</button> : <></>}
      {owner === user.name ? <button onClick={deleteQuote}>Delete Quote</button> : <></>}
      
     </div>

@@ -21,7 +21,6 @@ function MyQuotes({apiQuotes}) {
   const [names, setNames] = useState([])
   const [selectedUser, setSelectedUser] = useState(user.name)
 
-
   const getAllQuotes = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -37,7 +36,7 @@ function MyQuotes({apiQuotes}) {
       .catch((error) => console.log(error));
   };
 
-  const filtered = quotes.filter((quote) =>{return quote.owner === selectedUser} )
+  let filtered =  quotes.filter((quote) =>{return quote.owner === selectedUser} )
   const getAllUsers = () => {
     
     axios
@@ -63,15 +62,17 @@ function MyQuotes({apiQuotes}) {
 
       <div><h2>Post</h2><AddQuote refreshQuotes={getAllQuotes} /></div>
       
-      <div><h2>Users Quotes</h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
-      .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
+      <div><h2>Users Quotes</h2>
+      { filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> :
+       filtered.map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
 
       <div><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
 
       <div>
       <h2>Users</h2>
-      <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
-      <UsersList names={names} setSelectedUser={setSelectedUser}/></div>
+      <button onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
+      <button onClick={() => {filtered = quotes}}>All quotes</button>   
+         <UsersList names={names} setSelectedUser={setSelectedUser}/></div>
        
     </div>
   );
