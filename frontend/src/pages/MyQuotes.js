@@ -55,7 +55,7 @@ function MyQuotes({apiQuotes}) {
     getAllUsers();
   }, [] );
 
- //update
+ //updateewrwr
   
   return (
     <div className="myQuotesPage">
