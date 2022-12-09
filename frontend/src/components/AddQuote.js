@@ -43,18 +43,11 @@ function AddQuote({refreshQuotes}) {
       <h3>Add Quote</h3>
 
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
 
-        <label>Quote:</label>
+      
         <textarea
           type="text"
-          name="description"
+          placeholder="Your quote"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
