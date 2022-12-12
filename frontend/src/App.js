@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import Data from "./pages/Quotes.json"
 import MoviesQuotes from "./pages/MoviesQuotes"
 import ApiQuotes from "./pages/ApiQuotes"
+import FavouritesQuotes from "./pages/FavouritesQuotes";
 
 import axios from "axios";
 
@@ -44,7 +45,10 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/movies-quotes" element={<MoviesQuotes quotes={quotes}/>} />
+        <Route path="/favourites" element={<FavouritesQuotes  quotes={quotes}/>} />
+        <Route path="/favourites/:user_id" element={<FavouritesQuotes  quotes={quotes}/>} />
+       
+        
 
         <Route
           path="/my-quotes"
