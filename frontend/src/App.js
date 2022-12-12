@@ -45,8 +45,10 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/movies-quotes" element={<MoviesQuotes quotes={quotes}/>} />
-        {/* <Route path="/favourites" element={<FavouritesQuotes  quotes={quotes}/>} /> */}
+        <Route path="/favourites" element={<FavouritesQuotes  quotes={quotes}/>} />
+        <Route path="/favourites/:user_id" element={<FavouritesQuotes  quotes={quotes}/>} />
+       
+        
 
         <Route
           path="/my-quotes"

@@ -19,29 +19,33 @@ function FavouritesQuotes() {
 
 
   const getAllFavourites = () => {
-    
-
-    
-    axios
+    if(user._id) { axios
       .get(
-      `${API_URL}/my-favourites`,
+      `${API_URL}/favourites/${user._id}`,
     )
       .then((response) => setQuotes(response.data))
   
       .catch((error) => console.log(error));
-  };
+  };}
+   
 
   useEffect(() => {
     getAllFavourites();
   }, [] );
+
+quotes && console.log(quotes)
   return (
- 
-     
-      <div quotes={quotes}></div>
+ <>
+      {quotes && quotes.map((quote) =>{
+
+        return <h1>{quote.description}</h1>
 
 
-      
-       
+
+
+      })}
+      </>
+    
 
   );
 }
