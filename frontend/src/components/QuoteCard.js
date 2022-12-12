@@ -49,7 +49,8 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
       <p>@{owner} </p>
       {owner !== user.name ? <><button className="buttonQuote" onClick={addLike}>❤️</button> <p>{likes}</p></> : <></>}
      {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>❌</button> : <></>}
-    
+     {/* {<button className="buttonQuote">➕</button>}
+     */}
     </div>
   );
 }
