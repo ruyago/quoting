@@ -37,7 +37,7 @@ textarea {
   width: 350px;
   height: 50px;
   border: 0px;
-  background-color:  white;
+  background-color:  rgb(255, 255, 255);
   border-radius: 6px;
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -62,29 +62,45 @@ nav li {
 }
 
 .cards {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 470px;
-  height: auto;
-  padding: 10px;
-  box-shadow: 0px 2px 3px rgb(255, 255, 255);
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: #dde2eb;
-  border-radius: 4px;
-  font-family: 'Special Elite', cursive;
-  font-size: 20px;
   
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-width: 480px;
+  max-width: 640px;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid #2F3336;
+  display: flex;
+  font-size: 1.1rem;
+  line-height: 18px;
+  background: #080808;
+  font-family: 'Special Elite', cursive;
 }
 
+.owner{
+  font-weight: bold;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 1em 1.75em;
+  text-align: left;
+  color: #e7e9ea;
+}
+
+.text {
+  text-align: left;
+  padding: 1em 1.75em;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #E7E9EA
+}
 .cards button{
   border-radius: 20px;
-  padding: 5px 0;
-  /* width:  1rem;
-  height: 2rem; */
+  align-self: flex-end;
+  padding: 1em 2em;
+  width: auto;
+  font-size: 12px;
+  height: auto;
   border: 0;
-  background-color: #dde2eb;
+  background-color: #080808;
 }
 
 .QuoteCard h3::after {
