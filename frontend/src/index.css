@@ -10,16 +10,12 @@ body {
 
 }
 
-.App{
-  background-color:  #608dd5;
-}
-
 a {
   list-style: none;
   color: black;
 }
 
-button,
+
 select {
   padding: 5px 10px;
   min-width: 50px;
@@ -27,13 +23,13 @@ select {
   font-size: 18px;
   border: 0;
   border-radius: 20px;
-  background-color: #3c5b92;
+  background-color: #73d3f3;
 }
 
 label {
   width: 200px;
   display: block;
-  color: white;
+  color: black;
 }
 
 input,
@@ -41,7 +37,7 @@ textarea {
   width: 350px;
   height: 50px;
   border: 0px;
-  background-color:  #608dd5;
+  background-color:  white;
   border-radius: 6px;
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -65,26 +61,30 @@ nav li {
   font-weight: 600;
 }
 
-.card {
-  width: 400px;
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 470px;
   height: auto;
   padding: 10px;
   box-shadow: 0px 2px 3px rgb(255, 255, 255);
   margin: 0 auto;
   margin-bottom: 20px;
-  background: #94a7c8;
+  background: #dde2eb;
   border-radius: 4px;
   font-family: 'Special Elite', cursive;
+  font-size: 20px;
   
 }
 
-.card button{
-  background-color: #2e59b5;
-  color: white;
-  font-family: 'Special Elite', cursive;
+.cards button{
   border-radius: 20px;
   padding: 5px 0;
-
+  /* width:  1rem;
+  height: 2rem; */
+  border: 0;
+  background-color: #dde2eb;
 }
 
 .QuoteCard h3::after {
@@ -95,7 +95,7 @@ nav li {
 .EditQuotePage,
 .SignupPage,
 .LoginPage {
-  background:   #608dd5;
+  background: white;
   border: 0;
   width: 400px;
   text-align: center;
@@ -103,7 +103,7 @@ nav li {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 4px;
-  font-family: 'Special Elite', cursive; 
+ 
 }
 
 .AddQuote {
@@ -152,6 +152,3 @@ border-right: 3px rgb(0, 0, 0);
 
 }
 
-h3 {
-  color:  #000000;
-}

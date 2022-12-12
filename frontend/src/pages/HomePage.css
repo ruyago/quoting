@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
+body{
+    background-color: #FCFBF9;
+}
+footer{
+    background-color: #FCFBF9;
+
+}
 h1 {
     margin-top: 50px;
 
     font-size: 60px;
-    font-family: 'Special Elite', cursive; 
+    font-family: 'Rubik Spray Paint', cursive;
     text-align: center; 
 }
 
@@ -14,13 +23,51 @@ h3 {
     font-family: 'Special Elite', cursive; 
     text-align: center; 
 }
+.Subtitle{
 
-.home {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Acme', sans-serif;
+}
+
+
+.Home-down {
+ margin-top: 100px;   
  display: flex;
  flex-direction: row;
  justify-content: space-around;
  align-items: flex-end;
+ background-color: #FCFBF9;
+ background-image: url(../assets/homepage.jpeg);
+ background-size :auto;
+ background-position: center;
 
+}
+
+.Home-top {
+ background-color: #FCFBF9;
+   }
+
+.home-right{
+
+    background-color: #FCFBF9; 
+}
+
+.SignupPage{
+    width: 550px;
+    height: 520px;
+    background: linear-gradient(-180deg, #f2fffe, #CCF3F8);
+}
+.LoginPage{
+    width: 550px;
+    height: 520px;
+    background: linear-gradient(-180deg, #f2fffe, #CCF3F8);
+}
+
+#footerText{
+
+    padding-top: 150px;
+    padding-left: 20px;
 }
 
 img {

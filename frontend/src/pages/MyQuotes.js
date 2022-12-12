@@ -65,7 +65,7 @@ function MyQuotes({apiQuotes}) {
         <div className="UserList">
           <h2>Users</h2>
           <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
-          <UsersList names={names}  setSelectedUser={setSelectedUser}/>
+          <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4>
         </div>
       </div>
       
@@ -75,7 +75,7 @@ function MyQuotes({apiQuotes}) {
       </div>
       
      
-      <div className="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+      <div id="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
        
     </div>
   );
