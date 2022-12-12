@@ -13,14 +13,16 @@ h1 {
     margin-top: 50px;
 
     font-size: 60px;
-    font-family: 'Rubik Spray Paint', cursive;
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     text-align: center; 
 }
 
 h3 {
+    color: #E7E9EA;
     margin-top: 30px;
     font-size: 30px;
-    font-family: 'Special Elite', cursive; 
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;  */
     text-align: center; 
 }
 .Subtitle{

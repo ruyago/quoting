@@ -64,8 +64,9 @@ header {
 }
 
 .list button:hover{
-    color: #000000;
-    font-size: large;
+    color: #00000063;
+    font-size: 23px;
+
 }
 
 #username{

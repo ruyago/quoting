@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <header>
-      <Link to="/">
+      <Link to="/my-quotes">
         <img className="logo" src={logo} alt="logo" />
       </Link>
       

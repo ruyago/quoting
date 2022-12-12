@@ -65,21 +65,17 @@ function MyQuotes({apiQuotes}) {
         <div className="UserList">
           <h2>Users</h2>
           <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
-         <h4> <UsersList names={names}  setSelectedUser={setSelectedUser}/></h4>
+          <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4>
         </div>
       </div>
       
       <div><AddQuote refreshQuotes={getAllQuotes} />
-
         <div className="QuoteCards"><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
         .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
       </div>
       
      
-      <div className="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
-
-
-      
+      <div id="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
        
     </div>
   );

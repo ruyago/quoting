@@ -1,12 +1,13 @@
 h2 {
-    color: black;
+    color: #e7e9e7;
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
 }
 .myQuotesPage {
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 10%;
+    padding: 0 3%;
     
     
 }
@@ -21,15 +22,14 @@ h2 {
     flex-direction: column-reverse;
     padding-top: 15px;
 }
-.UserList {
-    background-color: rgba(104, 121, 121, 0);
-   
-    
-}
 
 .UserContainer {
-    border-right: 1px solid rgb(99, 99, 99);
+    border-right: 1px solid #2F3336;
+    background-color: ;
 }
+
+
+
 .UserList button{
     background-color: #ffffff;
     border: 0;
@@ -42,18 +42,30 @@ h2 {
 }
 
 .UserList button:hover{
-    background-color: rgb(130, 130, 130);
+background-color: rgb(130, 130, 130);
 }
 
-.ButtonMyQuotes{
-    background-color: aqua;
-    border: 0;
-    
+
+
+#QuotesOfTheDay {
+border-left: 1px solid #2F3336;
+padding-left: 40px;
+background-color: #16181c;
+
+
 }
 
-.QuotesOfTheDay {
-    border-left: 1px solid rgb(99, 99, 99);
-
-    padding-left: 10px;
+#QuotesOfTheDayCard {
+width: 320px;
+height: auto;
+padding: 10px;
+border: 1px solid #2F3336;
+margin: 0 auto;
+color: #e7e9e7;
+margin-bottom: 20px;
+background: #080808;
+border-radius: 4px;
+font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+font-size: 20px;
 }
 
