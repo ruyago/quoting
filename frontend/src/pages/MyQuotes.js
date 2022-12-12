@@ -70,14 +70,12 @@ function MyQuotes({apiQuotes}) {
       </div>
       
       <div><AddQuote refreshQuotes={getAllQuotes} />
-
         <div className="QuoteCards"><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
         .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
       </div>
       
      
       <div className="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
-
        
     </div>
   );
