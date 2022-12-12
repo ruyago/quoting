@@ -8,6 +8,9 @@ import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import ApiQuotes from "../pages/ApiQuotes";
+import logout from "../assets/logout.png"
+import home from "../assets/home.png"
+import quote from "../assets/quote.png"
 
 
 
@@ -60,12 +63,40 @@ function MyQuotes({apiQuotes}) {
   
   return (
     <div className="myQuotesPage">
+      <div>
+        <div className="UserContainer">
+          <div className="UserList">
+            <h2>Users</h2>
 
-      <div className="UserContainer">
-        <div className="UserList">
-          <h2>Users</h2>
-          <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
-          <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4>
+          
+            <input type="search" placeholder="    Search..." className="search"/>
+
+            <ul id="LeftList">
+
+            
+              <li>
+              <Link to="/my-quotes">
+                  <button>  Home</button>
+              </Link>
+              </li>
+
+              <li>
+              <Link to="/my-quotes">
+                <button> My qoutes</button>
+              </Link>
+              </li>
+
+              <li>
+              <Link to="/my-quotes">
+                <button> Log out</button>
+              </Link>
+              </li>
+
+             
+            </ul>
+            {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}
+            {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
+          </div>
         </div>
       </div>
       

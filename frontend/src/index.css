@@ -37,16 +37,17 @@ textarea {
   width: 350px;
   height: 50px;
   border: 0px;
-  background-color:  rgb(255, 255, 255);
-  border-radius: 6px;
-  color: rgb(0, 0, 0);
+  background-color:  white;
+  color: #080808;
   text-decoration: none;
+  border: 0;
+  
 
 }
 
 nav {
   background: #515f7d;
-  color: white;
+  color: #E7E9EA;
   padding: 0px 20px;
   box-shadow: 0px 1px 2px gray;
   width: 100%;
@@ -74,8 +75,12 @@ nav li {
   display: flex;
   font-size: 1.1rem;
   line-height: 18px;
-  background: #080808;
-  font-family: 'Special Elite', cursive;
+  background: #ffffff;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.cards:hover{
+  background-color: #dbdbdb;
 }
 
 .owner{
@@ -83,14 +88,16 @@ nav li {
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 1em 1.75em;
   text-align: left;
-  color: #e7e9ea;
+  color: #2F3336;
 }
 
 .text {
+  justify-content: center;
   text-align: left;
-  padding: 1em 1.75em;
+  padding-top: 1em;
+  padding-left: 1em;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #E7E9EA
+  color: #2F3336
 }
 .cards button{
   border-radius: 20px;
@@ -100,7 +107,7 @@ nav li {
   font-size: 12px;
   height: auto;
   border: 0;
-  background-color: #080808;
+  background-color: #ffffff;
 }
 
 .QuoteCard h3::after {
@@ -128,7 +135,7 @@ nav li {
   flex-direction: column;
 }
 ::placeholder{
-  color: #000000;
+  color: #7e7e7e;
 }
 
 .EditQuotePage {
@@ -158,13 +165,52 @@ nav li {
   display: block;
 }
 
+.UserContainer {
+  border-right: 1px solid #d1d3d4;
+  height: 100%;
+  position: fixed;
+  
+  
+}
 
 .UsersList {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-border-right: 3px rgb(0, 0, 0);
 
+
+}
+
+#LeftList{
+  font-weight: bold;
+  list-style-type: none;
+  padding: 4rem 1rem;
+}
+
+#LeftList li button {
+  font-size: 1.5em;
+
+
+  
+}
+
+.logos{
+  height: 20px;
+  
+  
+
+}
+.SubmitButton{
+  border: 0;
+  background-color: #308cd9;
+  padding: 0 16px 0 16px;
+  font-size: 15px;
+  border-radius: 15px;
+  height: 36px;
+  min-height: 36px;
+  min-width: 36px;
+  font-weight: 700;
+  color: #ffffff;
 }
 

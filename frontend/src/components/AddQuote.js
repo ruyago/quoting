@@ -40,7 +40,8 @@ function AddQuote({refreshQuotes}) {
 
   return (
     <div className="AddQuote">
-      <h3>Add Quote</h3>
+     <div> 
+    <h3>Add Quote</h3>
 
       <form onSubmit={handleSubmit}>
 
@@ -48,13 +49,14 @@ function AddQuote({refreshQuotes}) {
       
         <textarea
           type="text"
-          placeholder="Your quote"
+          placeholder="Your quote..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <br/>
-        <button type="submit">Submit</button>
+        <button className="SubmitButton" type="submit">Submit</button>
       </form>
+      </div>
     </div>
   );
 }

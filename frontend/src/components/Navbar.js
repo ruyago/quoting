@@ -12,24 +12,24 @@ function Navbar() {
 
   return (
     <header>
-      <Link to="/my-quotes">
-        <img className="logo" src={logo} alt="logo" />
-      </Link>
       
-
-      <input type="search" placeholder="Search..." className="search"/>
-
+      
       {isLoggedIn && (
         <>
 
-        <ul className="list">
+
+        <li>
+          <Link to="/my-quotes">
+            <img className="logo" src={logo} alt="logo" />
+          </Link>
+        </li>
 
         
-          <li>
-            <Link to="/my-quotes">
-              <button>My quotes</button>
-            </Link>
-          </li>
+
+        {/* <ul className="list">
+
+        
+          
          
           <li>
             <button onClick={logOutUser}>Logout</button>
@@ -40,7 +40,7 @@ function Navbar() {
               <button id="username">{user && user.name}</button>
             </Link>
           </li>
-        </ul>
+        </ul> */}
           
         </>
         
