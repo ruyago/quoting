@@ -10,7 +10,7 @@ const ApiQuotes = ({ apiQuotes }) => {
               <div key={apiQuote._id}>
 
                
-                <h3>hello</h3>
+                <p className="QuoteCard card">Ioannis V, king of Germany.</p>
                 
               </div>
             );

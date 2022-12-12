@@ -25,11 +25,12 @@ function LoginPage(props) {
 
     axios.post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
         
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        setTimeout(() => {
+          navigate("/my-quotes");
+        }, 10000);
       })
       .catch((error) => {
       	const errorDescription = error.response.data.message;
@@ -39,15 +40,18 @@ function LoginPage(props) {
   
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
-
+      <br/>
+      <h2>Login</h2>
+      <br/>
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
+        
         <input type="email" name="email" value={email} onChange={handleEmail} />
-
+        <br/>
         <label>Password:</label>
+        
         <input type="password" name="password" value={password} onChange={handlePassword} />
-
+        <br/>
         <button type="submit">Login</button>
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }

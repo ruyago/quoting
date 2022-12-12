@@ -1,5 +1,5 @@
 h2 {
-    color: white;
+    color: black;
 }
 .myQuotesPage {
 
@@ -37,7 +37,7 @@ h2 {
     margin-top: 20px;
     margin-right: 30px; 
     margin-left: 30px;
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -53,5 +53,7 @@ h2 {
 
 .QuotesOfTheDay {
     border-left: 1px solid rgb(99, 99, 99);
+
     padding-left: 10px;
 }
+
