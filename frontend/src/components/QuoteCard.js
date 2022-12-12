@@ -47,8 +47,8 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
    
       <p style={{ maxWidth: "400px" }}>{description} </p>
       <p>@{owner} </p>
-      {owner !== user.name ? <><button onClick={addLike}>Favourite Quote</button> <p>{likes}</p></> : <></>}
-     {owner === user.name ? <button onClick={deleteQuote}>Delete Quote</button> : <></>}
+      {owner !== user.name ? <><button className="buttonQuote" onClick={addLike}>❤️</button> <p>{likes}</p></> : <></>}
+     {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>❌</button> : <></>}
     
     </div>
   );

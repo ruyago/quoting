@@ -65,7 +65,7 @@ function MyQuotes({apiQuotes}) {
         <div className="UserList">
           <h2>Users</h2>
           <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button>
-          <UsersList names={names}  setSelectedUser={setSelectedUser}/>
+         <h4> <UsersList names={names}  setSelectedUser={setSelectedUser}/></h4>
         </div>
       </div>
       
