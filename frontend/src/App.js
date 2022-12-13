@@ -22,26 +22,23 @@ const API_URL = "http://localhost:5005";
 
 function App() {
  
+  let responseAPI = []
 
   const [quotes, setQuotes] = useState(Data)
   const [apiQuotes, setApiQuotes] = useState([]);
-
-  let responseAPI = []
+  const [favQuotes, setFavQuotes] = useState([]);
 
   useEffect(() => {
     for(let i =0; i<2 ; i++){
-    axios
-      .get("https://favqs.com/api/qotd")
-      .then((response) => {
-         responseAPI.push(response.data.quote);
-      });
-
+      axios
+        .get("https://favqs.com/api/qotd")
+        .then((response) => {
+           responseAPI.push(response.data.quote);
+        });
+  
       setApiQuotes(responseAPI)
-  }}, []);
-
       getAllQuotes()
-  }, []);
-
+  }}, []);
   console.log(apiQuotes)
 
   const getAllQuotes = () => {

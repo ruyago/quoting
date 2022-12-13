@@ -6,7 +6,7 @@ const ApiQuotes = ({ apiQuotes }) => {
     return (
 
         <div>
-          {apiQuotes.map((quote)=> (
+          {apiQuotes && apiQuotes.map((quote)=> (
             
             <div>
             <p>"{quote.body}"</p>
@@ -14,7 +14,7 @@ const ApiQuotes = ({ apiQuotes }) => {
             </div>
             
           ))}
-
+                </div>
 
        
       );
