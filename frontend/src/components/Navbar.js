@@ -23,7 +23,7 @@ function Navbar() {
 
 
         <li>
-          <Link to="/my-quotes">
+          <Link to="/">
             <img className="logo" src={logo} alt="logo" />
           </Link>
         </li>
