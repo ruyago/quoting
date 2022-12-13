@@ -28,9 +28,8 @@ function LoginPage(props) {
         
         storeToken(response.data.authToken);
         authenticateUser();
-        setTimeout(() => {
-          navigate("/my-quotes");
-        }, 10000);
+        navigate("/");
+        
       })
       .catch((error) => {
       	const errorDescription = error.response.data.message;

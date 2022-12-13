@@ -12,6 +12,10 @@ function Navbar() {
 
   return (
     <header>
+
+      <Link to="/">
+        <img className="logo" src={logo} alt="logo" />
+      </Link>
       
       
       {isLoggedIn && (
