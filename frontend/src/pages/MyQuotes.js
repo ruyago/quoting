@@ -13,6 +13,7 @@ import home from "../assets/home.png"
 import quote from "../assets/quote.png"
 import Dropdown from 'react-bootstrap/Dropdown';
 import logo from "../assets/logo.png"
+import "./Dropdown.css"
 
 
 const API_URL = "http://localhost:5005";
@@ -70,16 +71,16 @@ function MyQuotes({apiQuotes, getAllQuotes, quotes}) {
             
               <li>
 
-              <Link to="/my-quotes">
-                  <button> <img className="logos" src={home} alt="" /> Home</button>
+                <Link to="/my-quotes">
+                    <button>Home</button>
 
-              </Link>
+                </Link>
               </li>
 
               <li>
-              <Link to="/my-quotes">
-                <button> <img className="logos" src={quote} alt="" /> My qoutes</button>
-              </Link>
+                <Link to="/my-quotes">
+                  <button>My qoutes</button>
+                </Link>
               </li>
 
               <li>
@@ -102,13 +103,17 @@ function MyQuotes({apiQuotes, getAllQuotes, quotes}) {
             {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
           </div>
           <Dropdown>
-              <Dropdown.Toggle  id="dropdown-basic">
+              <Dropdown.Toggle className="UserButtonColor">
                 Users
               </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"><h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4></Dropdown.Item>
-                
+              <Dropdown.Menu className="MenuColor">
+                <h4 className="Users"> 
+                  <Link to="/my-quotes" className="UserList">
+                    <button id="me">Me</button>
+                   </Link>
+                  <UsersList names={names}  setSelectedUser={setSelectedUser}/>
+                </h4>
               </Dropdown.Menu>
             </Dropdown>
         </div>
@@ -119,11 +124,18 @@ function MyQuotes({apiQuotes, getAllQuotes, quotes}) {
         <div className="QuoteCards"><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
         .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
       </div>
+      <div className="MoreQuoteContainer">
+        <div className="MoreQuote">
       
-     
-      <div id="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+            <p id="MoreQuoteAuthor">@{apiQuotes.author}</p>
+
+            <p id="MoreQuoteText">"{apiQuotes.body}"</p>
+          
+            <div id="TopQuotes">Top quotes of the day</div>
+        </div>
+      </div>
        
-    </div>
+     </div>
 
     
   );
