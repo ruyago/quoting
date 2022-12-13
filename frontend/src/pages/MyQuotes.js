@@ -74,7 +74,8 @@ function MyQuotes({apiQuotes}) {
         </Link>
 
           <div className="UserList">
-            <h2>Users</h2>
+           
+            <br />
 
             
           
@@ -141,11 +142,11 @@ function MyQuotes({apiQuotes}) {
       <div className="MoreQuoteContainer">
         <div className="MoreQuote">
       
-            <p id="MoreQuoteAuthor">@{apiQuotes.author}</p>
+            <p id="MoreQuoteAuthor">- {apiQuotes.author} -</p>
 
             <p id="MoreQuoteText">"{apiQuotes.body}"</p>
           
-            <div id="TopQuotes">Top quotes of the day</div>
+            <div id="TopQuotes">Random quote</div>
         </div>
       </div>
        
