@@ -5,16 +5,10 @@ const ApiQuotes = ({ apiQuotes }) => {
     console.log(apiQuotes);
     return (
         <div>
-          {apiQuotes.map((apiQuote) => {
-            return (
-              <div key={apiQuote._id}>
 
-               
-                <p id="QuotesOfTheDayCard">{apiQuote.name}</p>
-                
-              </div>
-            );
-          })}
+          <p>"{apiQuotes.body}"</p>
+          <p>{apiQuotes.author}</p>
+
         </div>
       );
     };

@@ -19,7 +19,8 @@ const API_URL = "http://localhost:5005";
 
 
 function MyQuotes({apiQuotes}) {
-  const {user} = useContext(AuthContext)
+  const {user, logOutUser} = useContext(AuthContext)
+  
 
   const [quotes, setQuotes] = useState([]);
   const [names, setNames] = useState([])
@@ -82,8 +83,10 @@ function MyQuotes({apiQuotes}) {
 
             
               <li>
+
               <Link to="/my-quotes">
                   <button> <img className="logos" src={home} alt="" /> Home</button>
+
               </Link>
               </li>
 
@@ -94,9 +97,11 @@ function MyQuotes({apiQuotes}) {
               </li>
 
               <li>
-              <Link to="/my-quotes">
-                <button> <img className="logos" src={logout} alt="" /> Log out</button>
-              </Link>
+
+             
+            <button onClick={logOutUser}>Logout</button>
+        
+
               </li>
              
 

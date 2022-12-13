@@ -25,12 +25,14 @@ function App() {
 
   const [quotes, setQuotes] = useState(Data)
   const [apiQuotes, setApiQuotes] = useState([]);
+  const [favQuotes, setFavQuotes] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://ih-beers-api2.herokuapp.com/beers")
+      .get("https://favqs.com/api/qotd")
       .then((response) => {
-        setApiQuotes(response.data);
+        setApiQuotes(response.data.quote);
+        console.log(response)
       });
   }, []);
   console.log(apiQuotes)
@@ -45,8 +47,8 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/favourites" element={<FavouritesQuotes  quotes={quotes}/>} />
-        <Route path="/favourites/:user_id" element={<FavouritesQuotes  quotes={quotes}/>} />
+        <Route path="/favourites" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
+        <Route path="/favourites/:user_id" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
        
         
 

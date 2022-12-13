@@ -20,7 +20,12 @@ function Navbar() {
         <>
 
 
-        
+
+        <li>
+          <Link to="/">
+            <img className="logo" src={logo} alt="logo" />
+          </Link>
+        </li>
 
         
 
