@@ -20,19 +20,16 @@ function HomePage({quotes}) {
 singleQuote && console.log(singleQuote)
 
   return (
-    <div className="Home-top">
+    <div className="Home-top ">
       <h1>QUOTING LIFE</h1>
       <div className="QuoteCard card">{singleQuote}</div>
-
    
 
 
 {!isLoggedIn && (
-  <p className="Subtitle">Add your own quotes and discover the favourite of your friends.</p>
-    )}
-
-
-      <div className="Home-down">
+       <>
+        <p className="Subtitle">Add your own quotes and discover the favourite of your friends.</p>
+       <div className="Home-down">
         <div className="home-left">
           <SignupPage />
         
@@ -41,6 +38,18 @@ singleQuote && console.log(singleQuote)
         <LoginPage />
         </div>
       </div>
+      </>
+    )}
+
+    {isLoggedIn && (
+       <>
+       <a href="/my-quotes">
+          <button>Click</button></a>
+      </>
+    )}
+
+
+     
     </div>
   );
 }
