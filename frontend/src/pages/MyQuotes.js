@@ -18,29 +18,15 @@ import logo from "../assets/logo.png"
 const API_URL = "http://localhost:5005";
 
 
-function MyQuotes({apiQuotes}) {
+function MyQuotes({apiQuotes, getAllQuotes, quotes}) {
   const {user, logOutUser} = useContext(AuthContext)
   
 
-  const [quotes, setQuotes] = useState([]);
   const [names, setNames] = useState([])
   const [selectedUser, setSelectedUser] = useState(user.name)
 
 
-  const getAllQuotes = () => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem("authToken");
-
-    // Send the token through the request "Authorization" Headers
-    axios
-      .get(
-      `${API_URL}/api/my-quotes`,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
-      .then((response) => setQuotes(response.data))
   
-      .catch((error) => console.log(error));
-  };
 
   const filtered = quotes.filter((quote) =>{return quote.owner === selectedUser} )
   const getAllUsers = () => {
