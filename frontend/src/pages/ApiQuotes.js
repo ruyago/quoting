@@ -10,7 +10,7 @@ const ApiQuotes = ({ apiQuotes }) => {
               <div key={apiQuote._id}>
 
                
-                <p id="QuotesOfTheDayCard">Quote of the day</p>
+                <p id="QuotesOfTheDayCard">{apiQuote.name}</p>
                 
               </div>
             );

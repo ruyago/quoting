@@ -42,7 +42,7 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
   }; 
   console.log("sdf addFavourite", user._id)
 
-  const addFavourite = () => {
+const addFavourite = () => {
  const reqBody = { title, description, _id, owner, likes, user }
     axios
       .post(

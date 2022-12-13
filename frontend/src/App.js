@@ -52,7 +52,7 @@ function App() {
 
         <Route
           path="/my-quotes"
-          element={ <IsPrivate> <MyQuotes apiQuotes={apiQuotes} /> </IsPrivate> } 
+          element={ <IsPrivate><MyQuotes apiQuotes={apiQuotes} /></IsPrivate>  } 
           
         />
 
