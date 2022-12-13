@@ -39,5 +39,10 @@
 }
 
 .App {
-  background-color: #080808;
+  background-color: #ffffff;
+}
+
+.likes {
+  color: #000000;
+  font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }

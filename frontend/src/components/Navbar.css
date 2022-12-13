@@ -6,43 +6,35 @@
     
     margin: auto;
     width: auto;
-    height:80px;
+    height:50px;
     cursor: pointer;    
 
 }
-.navbar{
 
-
-    
-}
-
-li {
+/* li {
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
     background-color: #1da0f200;
 
-}
+} */
 
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0px 0px;
+    flex-direction: row;
+    text-align: center;
+    padding: 10px 30px;
     margin-bottom: 10px;
-    height: 50px;
+    height: 60px;
+    width: 100%;
     background-color: #ffffff;
+    text-decoration: none;
+    list-style-type: none;
     
 }
 
-.list {
-    list-style: none;
-}
 
-.list li{
-    display: inline-block;
-    padding: 20px;
-}
 
 .list li a{
     transition: all 0.3s ease 0s;
@@ -50,7 +42,7 @@ header {
 
 
 .list button {
-    color: rgb(5, 29, 50);
+    color: rgb(255, 255, 255);
     font-weight: 300;
     font-size: 20px;
     padding-top: 17px;
@@ -64,20 +56,29 @@ header {
 }
 
 .list button:hover{
-    color: #00000063;
-    font-size: 23px;
+    color: #cacaca63;
 
 }
 
+#home {
+    height: 20px;
+    font-size: 20px;
+    border: 0;
+    background-color:white;
+
+}
 #username{
-    color: rgb(34, 66, 140);
-    font-weight: 500;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
 .search{
-    border-radius: 8px;
+    border-radius: 20px;
     border: 0;
-    height: 80%;
-    background-color: rgba(255, 255, 255, 0.681);
+    margin-right: 10px;
+    padding: 0.5em;
+    height: auto;
+    width: auto;
+    background-color: rgba(214, 214, 214, 0.681);
 }

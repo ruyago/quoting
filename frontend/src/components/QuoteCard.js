@@ -60,6 +60,7 @@ const addFavourite = () => {
     <div className="cards">
     <p className="owner">{title} </p>
       <p className="owner">@{owner} </p>
+
       <p className="text" style={{ maxWidth: "400px" }}>{description} </p>
       {owner !== user.name ? <><button className="buttonQuote" onClick={addLike}>❤️</button> <p>{likes}</p></> : <></>}
      {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>❌</button> : <></>}
