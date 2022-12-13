@@ -58,7 +58,7 @@ const addFavourite = () => {
   
   return (
     <div className="cards">
-    <p className="owner">{title} </p>
+    
       <p className="owner">@{owner} </p>
 
       <p className="text" style={{ maxWidth: "400px" }}>"{description}"</p>

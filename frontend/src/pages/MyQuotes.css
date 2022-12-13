@@ -7,7 +7,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 3%;
+    padding: 0 0;
     
     
 }
@@ -19,8 +19,11 @@ h2 {
 
 .QuoteCards {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column-reverse;
-    padding-top: 15px;
+    padding: 2em 0;
+    
 }
 
 
@@ -42,12 +45,16 @@ h2 {
 
 
 #QuotesOfTheDay {   
+display: flex;
+flex-direction: column;
+align-items: flex;
 border-left: 1px solid #d1d3d4;
 padding-left: 40px;
 padding-right: 40px;
 background-color: #308dd9c1;
 margin-top: 0;
 border-radius: 20px;
+width: 30rem;
 
 }
 

@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 const ApiQuotes = ({ apiQuotes }) => {
     console.log(apiQuotes);
     return (
-        <div>
+      // <div id="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+      <div className="cards" id="QuoteCard">
+    
+          <p className="owner">@{apiQuotes.author}</p>
 
-          <p>"{apiQuotes.body}"</p>
-          <p>{apiQuotes.author}</p>
-
-        </div>
+          <p className="text" style={{ maxWidth: "300px" }}>"{apiQuotes.body}"</p>
+        
+      </div>
       );
     };
     

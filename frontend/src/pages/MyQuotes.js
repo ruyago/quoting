@@ -85,14 +85,14 @@ function MyQuotes({apiQuotes}) {
               <li>
 
               <Link to="/my-quotes">
-                  <button> <img className="logos" src={home} alt="" /> Home</button>
+                  <button>  Home</button>
 
               </Link>
               </li>
 
               <li>
               <Link to="/my-quotes">
-                <button> <img className="logos" src={quote} alt="" /> My qoutes</button>
+                <button>  My qoutes</button>
               </Link>
               </li>
 
@@ -134,10 +134,12 @@ function MyQuotes({apiQuotes}) {
         .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
       </div>
       
-     
-      <div id="QuotesOfTheDay"><h2>Quotes of the day</h2><ApiQuotes apiQuotes={apiQuotes} /></div>
+      <div>
+        
+      </div>
+      
        
-    </div>
+     </div>
 
     
   );
