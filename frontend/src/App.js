@@ -29,9 +29,10 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://ih-beers-api2.herokuapp.com/beers")
+      .get("https://favqs.com/api/qotd")
       .then((response) => {
-        setApiQuotes(response.data);
+        setApiQuotes(response.data.quote);
+        console.log(response)
       });
   }, []);
   console.log(apiQuotes)
