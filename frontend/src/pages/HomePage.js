@@ -12,10 +12,10 @@ function HomePage({quotes}) {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   const [singleQuote, setSingleQuote] = useState()
 
-  useEffect(()=> {
+ /*  useEffect(()=> {
     const random = quotes[Math.floor(quotes.length * Math.random())]
     setSingleQuote(random)
-  },[quotes])
+  },[quotes]) */
 
 singleQuote && console.log(singleQuote)
 
@@ -23,8 +23,7 @@ singleQuote && console.log(singleQuote)
     <div className="Home-top ">
       <h1>QUOTING LIFE</h1>
       <div className="QuoteCard card">{singleQuote}</div>
-   
-
+  
 
 {!isLoggedIn && (
        <>
