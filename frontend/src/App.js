@@ -25,15 +25,16 @@ function App() {
 
   const [quotes, setQuotes] = useState(Data)
   const [apiQuotes, setApiQuotes] = useState([]);
-
+  let responseAPI = []
   useEffect(() => {
+    for(let i =0; i<2 ; i++){
     axios
       .get("https://favqs.com/api/qotd")
       .then((response) => {
-        setApiQuotes(response.data.quote);
-        console.log(response)
+         responseAPI.push(response.data.quote);
       });
-  }, []);
+      setApiQuotes(responseAPI)
+  }}, []);
   console.log(apiQuotes)
 
   
