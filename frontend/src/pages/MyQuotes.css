@@ -23,11 +23,17 @@ h2 {
     align-items: center;
     flex-direction: column-reverse;
     padding: 2em 0;
+    position: sticky;
     
 }
 
 
-
+#me {
+    background-color: #308cd9;
+    color: white;
+    font-size: 1em;
+    padding: 10px 20px;
+}
 
 .UserList button{
     background-color: #ffffff;

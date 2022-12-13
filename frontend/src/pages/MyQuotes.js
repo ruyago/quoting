@@ -13,6 +13,7 @@ import home from "../assets/home.png"
 import quote from "../assets/quote.png"
 import Dropdown from 'react-bootstrap/Dropdown';
 import logo from "../assets/logo.png"
+import "./Dropdown.css"
 
 
 const API_URL = "http://localhost:5005";
@@ -84,16 +85,16 @@ function MyQuotes({apiQuotes}) {
             
               <li>
 
-              <Link to="/my-quotes">
-                  <button>  Home</button>
+                <Link to="/my-quotes">
+                    <button>Home</button>
 
-              </Link>
+                </Link>
               </li>
 
               <li>
-              <Link to="/my-quotes">
-                <button>  My qoutes</button>
-              </Link>
+                <Link to="/my-quotes">
+                  <button>My qoutes</button>
+                </Link>
               </li>
 
               <li>
@@ -116,13 +117,17 @@ function MyQuotes({apiQuotes}) {
             {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
           </div>
           <Dropdown>
-              <Dropdown.Toggle  id="dropdown-basic">
+              <Dropdown.Toggle className="UserButtonColor">
                 Users
               </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"><h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4></Dropdown.Item>
-                
+              <Dropdown.Menu className="MenuColor">
+                <h4 className="Users"> 
+                  <Link to="/my-quotes" className="UserList">
+                    <button id="me">Me</button>
+                   </Link>
+                  <UsersList names={names}  setSelectedUser={setSelectedUser}/>
+                </h4>
               </Dropdown.Menu>
             </Dropdown>
         </div>
@@ -133,11 +138,16 @@ function MyQuotes({apiQuotes}) {
         <div className="QuoteCards"><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
         .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
       </div>
+      <div className="MoreQuoteContainer">
+        <div className="MoreQuote">
       
-      <div>
-        
+            <p id="MoreQuoteAuthor">@{apiQuotes.author}</p>
+
+            <p id="MoreQuoteText">"{apiQuotes.body}"</p>
+          
+            <div id="TopQuotes">Top quotes of the day</div>
+        </div>
       </div>
-      
        
      </div>
 
