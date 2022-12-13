@@ -39,19 +39,15 @@ h2 {
 
 }
 
-.UserList button:hover{
-background-color: rgb(207, 207, 207);
-
-}
-
 
 
 #QuotesOfTheDay {   
 border-left: 1px solid #d1d3d4;
 padding-left: 40px;
 padding-right: 40px;
-background-color: #308cd9;
+background-color: #308dd9c1;
 margin-top: 0;
+width: 30rem;
 border-radius: 20px;
 
 }

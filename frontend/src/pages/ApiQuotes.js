@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const ApiQuotes = ({ apiQuotes }) => {
 
     return (
+
         <div>
           {apiQuotes.map((quote)=> (
             
@@ -14,7 +15,8 @@ const ApiQuotes = ({ apiQuotes }) => {
             
           ))}
 
-        </div>
+
+       
       );
     };
     

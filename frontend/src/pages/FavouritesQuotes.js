@@ -11,39 +11,53 @@ import { Link } from "react-router-dom";
 const API_URL = "http://localhost:5005";
 
 
-function FavouritesQuotes() {
+
+
+function FavouritesQuotes({refresh}) {
+  const [x, setX] = useState(false)
   const {user} = useContext(AuthContext)
 
-  const [quotes, setQuotes] = useState([]);
- 
+  const [favQuotes, setFavQuotes] = useState([]);
 
-
-  const getAllFavourites = () => {
-    if(user._id) { axios
-      .get(
-      `${API_URL}/favourites/${user._id}`,
+const deleteQuote = (_id) => {
+  axios
+    .put(
+      `${API_URL}/favourites/${_id}`, user
+                 
     )
-      .then((response) => setQuotes(response.data))
-  
-      .catch((error) => console.log(error));
-  };}
-   
+    .then (()=> window.location.reload())
+    .catch((err) => console.log(err));
+}; 
 
   useEffect(() => {
-    getAllFavourites();
-  }, [] );
+    setTimeout(()=> {
+      if(user._id) { axios
+        .get(
+        `${API_URL}/favourites/${user._id}`,
+      )
+        .then((response) => setFavQuotes(response.data))
+    
+        .catch((error) => console.log(error));
+    };
+    }, 100)
+      
+  
+  
+ 
+  }, [user] );
 
-quotes && console.log(quotes)
   return (
  <>
-      {quotes && quotes.map((quote) =>{
+      {favQuotes.length && favQuotes?.map((favQuote) =>{
 
-        return <h1>{quote.description}</h1>
-
-
-
+        return <div>{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>➕</button></div>
+       
+    
 
       })}
+      {/* {favQuotes.map((favQuote) =>{
+      return <button className="buttonQuote" onClick={deleteQuote}>➕</button>
+    })} */}
       </>
     
 

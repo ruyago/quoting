@@ -13,17 +13,16 @@ function Navbar() {
   return (
     <header>
 
-      <Link to="/">
-        <img className="logo" src={logo} alt="logo" />
-      </Link>
+      
       
       
       {isLoggedIn && (
         <>
 
 
+
         <li>
-          <Link to="/my-quotes">
+          <Link to="/">
             <img className="logo" src={logo} alt="logo" />
           </Link>
         </li>
