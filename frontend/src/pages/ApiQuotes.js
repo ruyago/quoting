@@ -7,7 +7,7 @@ const ApiQuotes = ({ apiQuotes }) => {
         <div>
           {apiQuotes.map((apiQuote) => {
             return (
-              <div key={apiQuote._id}>
+              <div key={apiQuotes.body}>
 
                
                 <p id="QuotesOfTheDayCard">{apiQuote.name}</p>

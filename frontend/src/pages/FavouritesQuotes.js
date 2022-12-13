@@ -14,34 +14,29 @@ const API_URL = "http://localhost:5005";
 function FavouritesQuotes() {
   const {user} = useContext(AuthContext)
 
-  const [quotes, setQuotes] = useState([]);
+  const [favQuotes, setFavQuotes] = useState([]);
  
-
-
-  const getAllFavourites = () => {
-    if(user._id) { axios
-      .get(
-      `${API_URL}/favourites/${user._id}`,
-    )
-      .then((response) => setQuotes(response.data))
-  
-      .catch((error) => console.log(error));
-  };}
-   
-
   useEffect(() => {
-    getAllFavourites();
-  }, [] );
+    const getAllFavourites = () => {
+      if(user._id) { axios
+        .get(
+        `${API_URL}/favourites/${user._id}`,
+      )
+        .then((response) => setFavQuotes(response.data))
+    
+        .catch((error) => console.log(error));
+    };}
 
-quotes && console.log(quotes)
+
+    getAllFavourites();
+  }, [user._id] );
+
+favQuotes && console.log(favQuotes)
   return (
  <>
-      {quotes && quotes.map((quote) =>{
+      {favQuotes.length && favQuotes.map((favQuote) =>{
 
-        return <h1>{quote.description}</h1>
-
-
-
+        return <h1>{favQuote.description}</h1>
 
       })}
       </>

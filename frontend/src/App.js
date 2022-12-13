@@ -25,6 +25,7 @@ function App() {
 
   const [quotes, setQuotes] = useState(Data)
   const [apiQuotes, setApiQuotes] = useState([]);
+  const [favQuotes, setFavQuotes] = useState([]);
 
   useEffect(() => {
     axios
@@ -45,8 +46,8 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/favourites" element={<FavouritesQuotes  quotes={quotes}/>} />
-        <Route path="/favourites/:user_id" element={<FavouritesQuotes  quotes={quotes}/>} />
+        <Route path="/favourites" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
+        <Route path="/favourites/:user_id" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
        
         
 
