@@ -1,7 +1,15 @@
+body{
+background-image: url(./assets/Cloudy.svg);
+background-size: cover;
+height: 100vh;
+font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
+}
+
 .App {
-  margin: 1em;
   text-align: center;
-  background-image: url(./assets/Wave.svg);
+  height: 100vh;
+  background-color: transparent;
+ /* background-image: url(./assets/Wave.svg); */
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
 }
 
@@ -40,9 +48,7 @@
   }
 }
 
-.App {
-  background-color: #ffffff;
-}
+
 
 .likes {
   color: #000000;

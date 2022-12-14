@@ -5,6 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import "../index.css"
 import Button from 'react-bootstrap/Button';
 
 import Container from 'react-bootstrap/Container';
@@ -50,47 +51,47 @@ const deleteQuote = (_id) => {
   return (
 
 <>
-<h1>Favourites</h1>
 
-    <div className="ContainerFavourites">
-      
-            <div className="LeftElements">
-              <div className="home-element">
-                <Link to="/">
-                <Button
-                      type="button"
-                      variant="primary"
-                    >
-                      Home
-                    </Button>
-                </Link></div>
-             
-                <div className="quotes-element">
-                <Link to="/my-quotes">
-                <Button
-                      type="button"
-                      variant="primary"
-                    >
-                      Quotes
-                    </Button>
-                </Link></div>
-                <div className="logout">
-              <Button onClick={logOutUser}
-                      type="button"
-                      variant="primary"
-                    >
-                      Logout
-                    </Button></div>
+
+
+<div className="">
+    <div className="myQuotesPage">
+      <div>
+  
+        <div className="UserContainer">
+          
+          <div className="UserList">
             
-            </div>
+            <br />
+          
+            <input type="search" placeholder="    Search..." className="search"/>
 
- <div className="favQuotes">
-      {favQuotes.length && favQuotes?.map((favQuote) =>{
-        return <div className="cardsFavourites">{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>✖️</button></div>
-      })}
- </div></div>
 
-</>    
+            <ul id="LeftList">
+              <li><Link to="/"><button>Home</button></Link></li>
+              <li><Link to="/favourites"><button>My favourites</button></Link></li>
+              <li><button onClick={logOutUser}>Logout</button></li>
+            </ul>
+            {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}
+            {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
+          </div>
+          
+        </div>
+      </div>
+
+
+      
+      <div className="MoreQuoteContainer">
+        <div className="MoreQuote">
+            
+          
+            <div id="TopQuotes">Random quote</div>
+        </div>
+      </div>
+       
+     </div>
+</div> 
+</>
   )
 }
 
