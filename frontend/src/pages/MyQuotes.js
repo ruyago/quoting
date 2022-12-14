@@ -51,6 +51,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
   //updateewrwr
 
   return (
+   <div className="">
     <div className="myQuotesPage">
       <div>
   
@@ -59,7 +60,12 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
             <img className="logo" src={logo} alt="logo" />
           </Link>
           <div className="UserList">
-            <input type="search" placeholder="    Search..." className="search" />
+           
+            <br />
+          
+            <input type="search" placeholder="    Search..." className="search"/>
+
+
             <ul id="LeftList">
               <li><Link to="/"><button>Home</button></Link></li>
               <li><Link to="/favourites"><button>My favourites</button></Link></li>
@@ -92,17 +98,17 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
       </div>
       <div className="MoreQuoteContainer">
         <div className="MoreQuote">
+            <p id="MoreQuoteAuthor">- {apiQuotes.author} -</p>
 
-          <p id="MoreQuoteAuthor">@{apiQuotes.author}</p>
-
-          <p id="MoreQuoteText">"{apiQuotes.body}"</p>
-
-          <div id="TopQuotes">Top quotes of the day</div>
+            <p id="MoreQuoteText">"{apiQuotes.body}"</p>
+          
+            <div id="TopQuotes">Random quote</div>
         </div>
       </div>
-
-  
-    </div>
+       
+     </div>
+</div> 
+    
 
   );
 }

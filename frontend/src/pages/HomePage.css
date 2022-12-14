@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 
+body {
+    background-image: url(../assets/Wave.svg);
+}
+
 footer{
     background-color: #FCFBF9;
 
@@ -37,31 +41,28 @@ h3 {
  flex-direction: row;
  justify-content: space-around;
  align-items: flex-end;
- background-color: #FCFBF9;
- background-image: url(../assets/homepage.jpeg);
  background-size :auto;
  background-position: center;
 
 }
 
 .Home-top {
- background-color: #FCFBF9;
    }
 
 .home-right{
 
-    background-color: #FCFBF9; 
+
 }
 
 .SignupPage{
     width: 550px;
     height: 520px;
-    background: linear-gradient(-180deg, #f2fffe, #CCF3F8);
+
 }
 .LoginPage{
     width: 550px;
     height: 520px;
-    background: linear-gradient(-180deg, #f2fffe, #CCF3F8);
+
 }
 
 #footerText{
