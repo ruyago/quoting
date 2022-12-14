@@ -65,6 +65,7 @@ function MyQuotes({apiQuotes}) {
  //updateewrwr
   
   return (
+   <div className="">
     <div className="myQuotesPage">
       <div>
         <div className="UserContainer">
@@ -151,7 +152,7 @@ function MyQuotes({apiQuotes}) {
       </div>
        
      </div>
-
+</div> 
     
   );
 }
