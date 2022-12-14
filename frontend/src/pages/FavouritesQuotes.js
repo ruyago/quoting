@@ -5,6 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import "../index.css"
 
 
 
@@ -44,38 +45,46 @@ const deleteQuote = (_id) => {
   return (
 
 <>
-<h1>Favourites</h1>
 
-<div className="UserList">
+
+<div className="">
+    <div className="myQuotesPage">
+      <div>
+  
+        <div className="UserContainer">
+          
+          <div className="UserList">
+            
+            <br />
+          
+            <input type="search" placeholder="    Search..." className="search"/>
+
 
             <ul id="LeftList">
-
-              <li>
-                <Link to="/">
-                    <button>Home</button>
-                </Link>
-              </li>
-              <li>
-                <Link to="/my-quotes">
-                  <button>Quotes</button>
-                </Link>
-              </li>
-              <li>
-    
-            <button onClick={logOutUser}>Logout</button>
-
-              </li>
-             <li>
-             </li>
+              <li><Link to="/"><button>Home</button></Link></li>
+              <li><Link to="/favourites"><button>My favourites</button></Link></li>
+              <li><button onClick={logOutUser}>Logout</button></li>
             </ul>
-</div>
- <div>
-      {favQuotes.length && favQuotes?.map((favQuote) =>{
-        return <div className="cards">{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
-      })}
- </div>
+            {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}
+            {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
+          </div>
+          
+        </div>
+      </div>
 
-</>    
+
+      
+      <div className="MoreQuoteContainer">
+        <div className="MoreQuote">
+            
+          
+            <div id="TopQuotes">Random quote</div>
+        </div>
+      </div>
+       
+     </div>
+</div> 
+</>
   )
 }
 

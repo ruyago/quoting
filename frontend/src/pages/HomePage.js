@@ -21,6 +21,7 @@ singleQuote && console.log(singleQuote)
 
   return (
   <div className="HomePageContainer"> 
+    
     <div className="HomePage">
       
 {!isLoggedIn && (
