@@ -59,11 +59,13 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
           <Link to="/">
             <img className="logo" src={logo} alt="logo" />
           </Link>
+
           <div className="UserList">
             
             <br />
           
             <input type="search" placeholder="    Search..." className="search"/>
+
 
 
             <ul id="LeftList">
@@ -99,10 +101,9 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
       </div>
       <div className="MoreQuoteContainer">
         <div className="MoreQuote">
-            <p id="MoreQuoteAuthor">- {apiQuotes.author} -</p>
-
-            <p id="MoreQuoteText">"{apiQuotes.body}"</p>
-          
+          <ApiQuotes apiQuotes={apiQuotes}/>
+            <p id="MoreQuoteAuthor">{quote.author} </p>
+            <p id="MoreQuoteText">{quote.body}</p>
             <div id="TopQuotes">Random quote</div>
         </div>
       </div>

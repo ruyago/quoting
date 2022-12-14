@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
+import Button from 'react-bootstrap/Button';
 
 const API_URL = "http://localhost:5005";
 
@@ -49,6 +50,7 @@ function LoginPage(props) {
           <input placeholder="Email" type="email" name="email" value={email} onChange={handleEmail} />
         </div>
         
+
         <div className="input" >
           <input placeholder="Password" type="password" name="password" value={password} onChange={handlePassword} />
         </div>
@@ -61,6 +63,7 @@ function LoginPage(props) {
         </div> */}
 
         <br />     
+
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 

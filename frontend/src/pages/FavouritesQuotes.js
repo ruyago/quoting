@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../index.css"
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -45,6 +46,7 @@ const deleteQuote = (_id) => {
   return (
 
 <>
+
 
 
 <div className="">

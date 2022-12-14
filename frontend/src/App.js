@@ -22,14 +22,14 @@ const API_URL = "http://localhost:5005";
 
 function App() {
  
-  let responseAPI = []
-
+  
   const [quotes, setQuotes] = useState(Data)
   const [apiQuotes, setApiQuotes] = useState([]);
   const [favQuotes, setFavQuotes] = useState([]);
-
+  let responseAPI = []
+  
   useEffect(() => {
-    for(let i =0; i<7 ; i++){
+    for(let i =0; i<2; i++){
       axios
         .get("https://favqs.com/api/qotd")
         .then((response) => {
