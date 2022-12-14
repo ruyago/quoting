@@ -4,6 +4,7 @@
 
 
 
+
 a {
   list-style: none;
   color: black;
@@ -203,19 +204,7 @@ nav li {
   margin-left: 5px;
 }
 
-.EditQuotePage,
-.SignupPage,
-.LoginPage {
-  background: white;
-  border: 0;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
- 
-}
+
 
 .AddQuote {
   display: flex;
@@ -230,14 +219,7 @@ nav li {
   background-color: rgb(239, 196, 88);
 }
 
-.SignupPage,
-.LoginPage {
-  background-color: #608dd5;
-}
 
-.LoginPage {
-  background-color: #94a7c8;
-}
 
 .EditQuotePage form,
 .AddQuote form,
