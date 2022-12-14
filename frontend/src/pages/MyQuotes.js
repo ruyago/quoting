@@ -60,7 +60,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
             <img className="logo" src={logo} alt="logo" />
           </Link>
           <div className="UserList">
-           
+            
             <br />
           
             <input type="search" placeholder="    Search..." className="search"/>
@@ -81,7 +81,8 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
 
             <Dropdown.Menu className="MenuColor">
               <h4 className="Users">
-              <button id="me" onClick={()=>{setSelectedUser()}}>All</button>
+                <button id="me" onClick={()=>{setSelectedUser()}}>Everyone</button>
+                <br />
                 <button id="me" onClick={()=>{setSelectedUser(user.name)}}>Me</button>
                 <UsersList names={names} setSelectedUser={setSelectedUser} />
               </h4>

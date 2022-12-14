@@ -3,20 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 
-body {
+/* body {
     background-image: url(../assets/Wave.svg);
-}
+} */
+
 
 footer{
     background-color: #FCFBF9;
 
 }
-h1 {
-    margin-top: 50px;
 
-    font-size: 60px;
-    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    text-align: center; 
+.QuotingLife {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.QuotingLife p {
+    text-align: left;
+    color: #d4d4d4;
+    margin-right: 5rem;
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
+    margin-right: 5rem;
 }
 
 h3 {
@@ -43,15 +57,30 @@ h3 {
  align-items: flex-end;
  background-size :auto;
  background-position: center;
+ 
 
 }
 
-.Home-top {
-   }
+.HomePageContainer{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
 
-.home-right{
 
+.HomePage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
 
+.LoginBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .SignupPage{
@@ -59,16 +88,10 @@ h3 {
     height: 520px;
 
 }
-.LoginPage{
-    width: 550px;
-    height: 520px;
-
-}
 
 #footerText{
-
-    padding-top: 150px;
-    padding-left: 20px;
+    background-color: transparent;
+   
 }
 
 img {
@@ -78,3 +101,44 @@ img {
 }
 
 
+.LoggedInPage {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://images.unsplash.com/photo-1613375920388-f1f70f341f8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+}
+
+.QuotesBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QuotesBlock input{
+    height: auto;
+    border-radius: 100px;
+    border: 3px solid black;
+}
+
+.FavouritesBlock input{
+    height: auto;
+    border-radius: 100px;
+    border: 3px solid black;
+}
+
+.FavouritesBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#QuotesTitle {
+    align-items: center;
+    text-align: center;
+}
+
+.QuotesBlockH1{
+    
+}
