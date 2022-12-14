@@ -41,7 +41,7 @@ function SignupPage(props) {
   return (
     <div className="SignupPage">
       <br/>
-      <h2>Sign Up</h2>
+      <h1>Sign Up</h1>
       <br/>
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>

@@ -19,35 +19,21 @@ import "./Dropdown.css"
 const API_URL = "http://localhost:5005";
 
 
-function MyQuotes({apiQuotes}) {
-  const {user, logOutUser} = useContext(AuthContext)
-  
+function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
+  const { user, logOutUser } = useContext(AuthContext)
 
-  const [quotes, setQuotes] = useState([]);
+
   const [names, setNames] = useState([])
-  const [selectedUser, setSelectedUser] = useState(user.name)
+  const [selectedUser, setSelectedUser] = useState()
 
 
-  const getAllQuotes = () => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem("authToken");
 
-    // Send the token through the request "Authorization" Headers
-    axios
-      .get(
-      `${API_URL}/api/my-quotes`,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
-      .then((response) => setQuotes(response.data))
-  
-      .catch((error) => console.log(error));
-  };
 
-  const filtered = quotes.filter((quote) =>{return quote.owner === selectedUser} )
+  const filtered = quotes.filter((quote) => { return quote.owner === selectedUser })
   const getAllUsers = () => {
-    
+
     axios
-      .get(  `${API_URL}/auth/userslist`  )
+      .get(`${API_URL}/auth/userslist`)
       .then((response) => setNames(response.data))
       .catch((error) => console.log(error));
   };
@@ -55,94 +41,63 @@ function MyQuotes({apiQuotes}) {
   // by setting the empty dependency array - []
   useEffect(() => {
     getAllQuotes();
-  }, [] );
-    // We set this effect will run only once, after the initial render
+  }, []);
+  // We set this effect will run only once, after the initial render
   // by setting the empty dependency array - []
   useEffect(() => {
     getAllUsers();
-  }, [] );
+  }, []);
 
- //updateewrwr
-  
+  //updateewrwr
+
   return (
    <div className="">
     <div className="myQuotesPage">
       <div>
+  
         <div className="UserContainer">
-
-        <Link to="/">
-              <img className="logo" src={logo} alt="logo" />
-        </Link>
-
+          <Link to="/">
+            <img className="logo" src={logo} alt="logo" />
+          </Link>
           <div className="UserList">
            
             <br />
-
-            
           
             <input type="search" placeholder="    Search..." className="search"/>
 
+
             <ul id="LeftList">
-
-            
-              <li>
-
-                <Link to="/my-quotes">
-                    <button>Home</button>
-
-                </Link>
-              </li>
-
-              <li>
-                <Link to="/my-quotes">
-                  <button>My qoutes</button>
-                </Link>
-              </li>
-
-              <li>
-
-             
-            <button onClick={logOutUser}>Logout</button>
-        
-
-              </li>
-             
-
-             <li>
-             
-             </li>
+              <li><Link to="/"><button>Home</button></Link></li>
+              <li><Link to="/favourites"><button>My favourites</button></Link></li>
+              <li><button onClick={logOutUser}>Logout</button></li>
             </ul>
-
-            
-            
             {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}
             {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
           </div>
           <Dropdown>
-              <Dropdown.Toggle className="UserButtonColor">
-                Users
-              </Dropdown.Toggle>
+            <Dropdown.Toggle className="UserButtonColor">
+              Users
+            </Dropdown.Toggle>
 
-              <Dropdown.Menu className="MenuColor">
-                <h4 className="Users"> 
-                  <Link to="/my-quotes" className="UserList">
-                    <button id="me">Me</button>
-                   </Link>
-                  <UsersList names={names}  setSelectedUser={setSelectedUser}/>
-                </h4>
-              </Dropdown.Menu>
-            </Dropdown>
+            <Dropdown.Menu className="MenuColor">
+              <h4 className="Users">
+              <button id="me" onClick={()=>{setSelectedUser()}}>All</button>
+                <button id="me" onClick={()=>{setSelectedUser(user.name)}}>Me</button>
+                <UsersList names={names} setSelectedUser={setSelectedUser} />
+              </h4>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </div>
-      
-      
+
+
       <div><AddQuote refreshQuotes={getAllQuotes} />
-        <div className="QuoteCards"><h2></h2>{ filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
-        .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />  )} </div>
+        <div className="QuoteCards">{filtered.length === 0 && !selectedUser ? quotes
+          .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />) : filtered.length === 0 && selectedUser ? `No quotes`: filtered
+          .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />)} </div>
       </div>
       <div className="MoreQuoteContainer">
         <div className="MoreQuote">
-      
             <p id="MoreQuoteAuthor">- {apiQuotes.author} -</p>
 
             <p id="MoreQuoteText">"{apiQuotes.body}"</p>
@@ -154,6 +109,7 @@ function MyQuotes({apiQuotes}) {
      </div>
 </div> 
     
+
   );
 }
 

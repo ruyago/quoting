@@ -18,24 +18,43 @@ import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 
-
+const API_URL = "http://localhost:5005";
 
 function App() {
  
+  let responseAPI = []
 
   const [quotes, setQuotes] = useState(Data)
   const [apiQuotes, setApiQuotes] = useState([]);
   const [favQuotes, setFavQuotes] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://favqs.com/api/qotd")
-      .then((response) => {
-        setApiQuotes(response.data.quote);
-        console.log(response)
-      });
-  }, []);
+    for(let i =0; i<7 ; i++){
+      axios
+        .get("https://favqs.com/api/qotd")
+        .then((response) => {
+           responseAPI.push(response.data.quote);
+        });
+  
+      setApiQuotes(responseAPI)
+      getAllQuotes()
+  }}, []);
   console.log(apiQuotes)
+
+  const getAllQuotes = () => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
+
+    // Send the token through the request "Authorization" Headers
+    axios
+      .get(
+      `${API_URL}/api/my-quotes`,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+    )
+      .then((response) => setQuotes(response.data))
+  
+      .catch((error) => console.log(error));
+  };
 
   
 
@@ -47,14 +66,14 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/favourites" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
+        <Route path="/favourites" element={<FavouritesQuotes  favQuotes={favQuotes} refresh={getAllQuotes}/>} />
         <Route path="/favourites/:user_id" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
        
         
 
         <Route
           path="/my-quotes"
-          element={ <IsPrivate><MyQuotes apiQuotes={apiQuotes} /></IsPrivate>  } 
+          element={ <IsPrivate><MyQuotes getAllQuotes={getAllQuotes} apiQuotes={apiQuotes} quotes={quotes}/></IsPrivate>  } 
           
         />
 
