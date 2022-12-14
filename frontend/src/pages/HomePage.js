@@ -4,7 +4,14 @@ import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
 import SignupPage from "./SignupPage";
 import LoginPage from "./LoginPage";
+
 import "./HomePage.css";
+
+import Homepage from "./HomePage.css"
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+
 
 
 
@@ -45,6 +52,7 @@ singleQuote && console.log(singleQuote)
 
     {isLoggedIn && (
        <>
+
        <div className="LoggedInPage">
 
         <div className="QuotesBlock">
@@ -59,6 +67,7 @@ singleQuote && console.log(singleQuote)
         </div>
 
        </div>
+
       </>
     )}
 
