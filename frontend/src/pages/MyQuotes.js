@@ -24,7 +24,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
 
 
   const [names, setNames] = useState([])
-  const [selectedUser, setSelectedUser] = useState(user.name)
+  const [selectedUser, setSelectedUser] = useState()
 
 
 
@@ -75,12 +75,8 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
 
             <Dropdown.Menu className="MenuColor">
               <h4 className="Users">
-              <Link to="/my-quotes" className="UserList">
-                  <button id="me">All</button>
-                </Link>
-                <Link to="/my-quotes" className="UserList">
-                  <button id="me">Me</button>
-                </Link>
+              <button id="me" onClick={()=>{setSelectedUser()}}>All</button>
+                <button id="me" onClick={()=>{setSelectedUser(user.name)}}>Me</button>
                 <UsersList names={names} setSelectedUser={setSelectedUser} />
               </h4>
             </Dropdown.Menu>
@@ -90,7 +86,8 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
 
 
       <div><AddQuote refreshQuotes={getAllQuotes} />
-        <div className="QuoteCards">{filtered.length === 0 ? <div> {selectedUser} didnt add any quotes. </div> : filtered
+        <div className="QuoteCards">{filtered.length === 0 && !selectedUser ? quotes
+          .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />) : filtered.length === 0 && selectedUser ? `No quotes`: filtered
           .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />)} </div>
       </div>
       <div className="MoreQuoteContainer">
