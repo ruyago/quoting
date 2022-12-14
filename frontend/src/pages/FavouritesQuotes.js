@@ -59,12 +59,12 @@ const deleteQuote = (_id) => {
             
             <br />
           
-            <input type="search" placeholder="    Search..." className="search"/>
-
+              
+              <p>Favourite</p>
 
             <ul id="LeftList">
               <li><Link to="/"><button>Home</button></Link></li>
-              <li><Link to="/favourites"><button>My favourites</button></Link></li>
+              <li><Link to="/my-quotes"><button>Quotes</button></Link></li>
               <li><button onClick={logOutUser}>Logout</button></li>
             </ul>
             {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}

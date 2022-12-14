@@ -8,8 +8,8 @@ const ApiQuotes = ({ apiQuotes }) => {
           {apiQuotes && apiQuotes.map((quote)=> (
             
             <div>
-            <p>"{quote.body}"</p>
-            <p>{quote.author}</p>
+              <p className="owner">-{quote.author}-</p>
+              <p className="text">"{quote.body}"</p>
             </div>
             
           ))}

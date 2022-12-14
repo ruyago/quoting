@@ -29,7 +29,7 @@ function App() {
   let responseAPI = []
   
   useEffect(() => {
-    for(let i =0; i<2; i++){
+   
       axios
         .get("https://favqs.com/api/qotd")
         .then((response) => {
@@ -38,7 +38,7 @@ function App() {
   
       setApiQuotes(responseAPI)
       getAllQuotes()
-  }}, []);
+  }, []);
   console.log(apiQuotes)
 
   const getAllQuotes = () => {
