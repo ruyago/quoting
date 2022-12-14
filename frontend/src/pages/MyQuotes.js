@@ -59,11 +59,13 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
           <Link to="/">
             <img className="logo" src={logo} alt="logo" />
           </Link>
+
           <div className="UserList">
            
             <br />
           
             <input type="search" placeholder="    Search..." className="search"/>
+
 
 
             <ul id="LeftList">
