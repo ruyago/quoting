@@ -60,9 +60,7 @@ function MyQuotes({apiQuotes, getAllQuotes, quotes}) {
         </Link>
 
           <div className="UserList">
-            <h2>Users</h2>
-
-            
+          
           
             <input type="search" placeholder="    Search..." className="search"/>
 
@@ -71,15 +69,15 @@ function MyQuotes({apiQuotes, getAllQuotes, quotes}) {
             
               <li>
 
-                <Link to="/my-quotes">
+                <Link to="/">
                     <button>Home</button>
 
                 </Link>
               </li>
 
               <li>
-                <Link to="/my-quotes">
-                  <button>My qoutes</button>
+                <Link to="/favourites">
+                  <button>My favourites</button>
                 </Link>
               </li>
 

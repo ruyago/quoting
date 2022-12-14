@@ -29,7 +29,7 @@ function App() {
   const [favQuotes, setFavQuotes] = useState([]);
 
   useEffect(() => {
-    for(let i =0; i<2 ; i++){
+    for(let i =0; i<7 ; i++){
       axios
         .get("https://favqs.com/api/qotd")
         .then((response) => {

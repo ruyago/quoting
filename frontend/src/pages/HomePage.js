@@ -42,8 +42,8 @@ singleQuote && console.log(singleQuote)
 
     {isLoggedIn && (
        <>
-       <a href="/my-quotes">
-          <button>Click</button></a>
+       <Link to="/my-quotes"><button>Quotes</button></Link>
+       <Link to="/favourites"><button>Favourites</button></Link>
       </>
     )}
 
