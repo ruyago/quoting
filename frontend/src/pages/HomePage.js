@@ -5,6 +5,9 @@ import { AuthContext } from "./../context/auth.context";
 import SignupPage from "./SignupPage";
 import LoginPage from "./LoginPage";
 import Homepage from "./HomePage.css"
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 
 
@@ -42,6 +45,17 @@ singleQuote && console.log(singleQuote)
 
     {isLoggedIn && (
        <>
+       <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="/assets/quotes-home." />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary"><Link to="/my-quotes">Go somewhere</Link></Button>
+      </Card.Body>
+    </Card>
        <Link to="/my-quotes"><button>Quotes</button></Link>
        <Link to="/favourites"><button>Favourites</button></Link>
       </>

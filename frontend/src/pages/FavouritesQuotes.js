@@ -5,6 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -46,34 +47,43 @@ const deleteQuote = (_id) => {
 <>
 <h1>Favourites</h1>
 
-<div className="UserList">
-
-            <ul id="LeftList">
-
-              <li>
+    <div className="ContainerFavourites">
+      
+            <div className="LeftElements">
+              <div className="home-element">
                 <Link to="/">
-                    <button>Home</button>
-                </Link>
-              </li>
-              <li>
+                <Button
+                      type="button"
+                      variant="primary"
+                    >
+                      Home
+                    </Button>
+                </Link></div>
+             
+                <div className="quotes-element">
                 <Link to="/my-quotes">
-                  <button>Quotes</button>
-                </Link>
-              </li>
-              <li>
-    
-            <button onClick={logOutUser}>Logout</button>
+                <Button
+                      type="button"
+                      variant="primary"
+                    >
+                      Quotes
+                    </Button>
+                </Link></div>
+                <div className="logout">
+              <Button onClick={logOutUser}
+                      type="button"
+                      variant="primary"
+                    >
+                      Logout
+                    </Button></div>
+            
+            </div>
 
-              </li>
-             <li>
-             </li>
-            </ul>
-</div>
- <div>
+ <div className="favQuotes">
       {favQuotes.length && favQuotes?.map((favQuote) =>{
-        return <div className="cards">{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
+        return <div className="cardsFavourites">{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>✖️</button></div>
       })}
- </div>
+ </div></div>
 
 </>    
   )

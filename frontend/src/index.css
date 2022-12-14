@@ -308,3 +308,71 @@ align-items: center;
   color: #ffffff;
 }
 
+
+/* FavouritesPage */
+
+.ContainerFavourites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  height: 100vh;
+  background-color: white;
+  
+  
+  }
+  
+  #LeftElements {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: baseline;
+      padding: 10px;
+  
+  }
+
+
+  .favQuotes {
+
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    
+    
+  
+  }
+
+  .cardsFavourites{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vh;
+    height: 10rem;
+    margin: 7px 0;
+    border: 1px solid #2F3336;
+    font-size: 1.4rem;
+    line-height: 18px;
+
+
+  }
+
+  .cardsFavourites button{
+    border-radius: 20px;
+    align-self: flex-end;
+    padding: 1em 2em;
+    width: auto;
+    font-size: 12px;
+    height: auto;
+    border: 0;
+    font-size: 17px;
+    
+  }
+  button .btn btn-primary {
+
+    padding: 20px;
+    margin: 20px;
+
+  }
