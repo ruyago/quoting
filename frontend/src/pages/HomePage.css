@@ -137,12 +137,16 @@ img {
     align-items: center;
 }
 
+.FavouritesBlock h1{
+    margin: auto;
+}
+
 #QuotesTitle {
     align-items: center;
     text-align: center;
 }
 
-h1 {
+#QuotesTitle h1 {
     margin: auto;
 }
 .QuotesBlockH1{
