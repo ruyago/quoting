@@ -67,7 +67,7 @@ nav li {
   line-height: 18px;
   background: #eff3f4;
   border-radius: 50px;
-  height: 500px;
+  height: 350px;
   position: fixed;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -79,13 +79,14 @@ nav li {
 
 #TopQuotes{
   font-size: 1.6em;
-  background-color: #308cd9;
+  background-color: #308dd9d5;
   width: 11em;
   padding: 0.5em;
   border-radius: 5px;
   color: white;
   font-weight: 300;
   border-radius: 30px; 
+  border: 0;
   
 }
 
@@ -117,7 +118,7 @@ nav li {
   min-width: 480px;
   max-width: 640px;
   min-height: 80px;
-  padding: 10px 0;
+  margin: 7px 0;
   border: 1px solid #2F3336;
   font-size: 1.1rem;
   line-height: 18px;
@@ -127,21 +128,20 @@ nav li {
 
 
 .cards:hover{
-  background-color: #ffffff;
+  background-color: #cccccc3d;
 }
 
 .owner{
   font-weight: bold;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  padding: 1em 1.75em;
-  text-align: left;
   color: #2F3336;
+  font-style: italic;
 }
 
 .text {
   justify-content: center;
   text-align: left;
-  padding-top: 0.7em;
+  padding-top: 1.7em;
   padding-left: 3em;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #2F3336;
@@ -159,7 +159,43 @@ nav li {
   font-size: 12px;
   height: auto;
   border: 0;
-  background-color: #ffffff;
+  font-size: 17px;
+  
+}
+
+.buttonQuote{
+  background-color: white;
+  margin-bottom: 0.7em;
+}
+
+.Interaction {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: -2em;
+
+}
+
+#LikeButton {
+  height: 3em;
+}
+
+.Likes {
+  
+}
+
+#AddToFav {
+  background-color: white;
+  margin-bottom: 0.7em;
+  margin-right: 0.5em;
+}
+
+#AddToFav:hover {
+  background-color: #0000000b;;
+}
+.Interaction button:hover {
+  background-color: #0000000b;
+
 }
 
 .QuoteCard h3::after {

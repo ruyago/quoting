@@ -59,13 +59,19 @@ const addFavourite = () => {
   return (
     <div className="cards">
     
-      <p className="owner">@{owner} </p>
+      
 
-      <p className="text" style={{ maxWidth: "400px" }}>"{description}"</p>
-      {owner !== user.name ? <><button className="buttonQuote" onClick={addLike}>❤️</button> <p>{likes}</p></> : <></>}
-     {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>❌</button> : <></>}
-     {<button className="buttonQuote" onClick={addFavourite}>➕</button>}
-    
+      <p className="text" style={{ maxWidth: "400px" }}>"{description}." <b className="owner">- {owner} -</b> </p>
+      <br /> 
+      <br />
+      <br />
+       <div className="Interaction">
+       
+        {owner !== user.name ? <><button className="buttonQuote" id="LikeButton" onClick={addLike}>👍 <b className="Likes">{likes}</b></button> </> : <></>}
+        {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>✖️</button> : <></>}
+        {<button id="AddToFav" onClick={addFavourite}>⭐</button>}
+        
+       </div>
     </div>
   );
 }

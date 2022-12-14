@@ -1,7 +1,7 @@
 .App {
   margin: 1em;
   text-align: center;
-  background-color: #ffffff;
+  background-image: url(./assets/Wave.svg);
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
 }
 
