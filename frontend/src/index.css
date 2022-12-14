@@ -64,6 +64,7 @@ nav li {
   margin-top: 7em;
   padding: 15px 0;
   width: 23em;
+  
   line-height: 18px;
   background: #eff3f4;
   border-radius: 50px;
@@ -74,7 +75,7 @@ nav li {
 
 .MoreQuoteContainer{
   margin-right: 2em;
-  
+  height: 100vh;
 }
 
 #TopQuotes{
