@@ -4,6 +4,7 @@ import axios from "axios";
 
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 const AuthContext = React.createContext();
 
@@ -24,7 +25,7 @@ function AuthProviderWrapper(props) {
     if (storedToken) {
       // We must send the JWT token in the request's "Authorization" Headers
       axios.get(
-        `${process.env.REACT_APP_SERVER_URL}/auth/verify`, 
+        `${API_URL2}/auth/verify`, 
         { headers: { Authorization: `Bearer ${storedToken}`} }
       )
       .then((response) => {

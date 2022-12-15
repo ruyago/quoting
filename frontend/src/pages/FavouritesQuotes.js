@@ -14,6 +14,7 @@ import logo from "../assets/logo.png"
 
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 function FavouritesQuotes({refresh}) {
   const [x, setX] = useState(false)
@@ -24,7 +25,7 @@ function FavouritesQuotes({refresh}) {
 const deleteQuote = (_id) => {
   axios
     .put(
-      `${process.env.REACT_APP_SERVER_URL}/favourites/${_id}`, user
+      `${API_URL2}/favourites/${_id}`, user
                  
     )
     .then (()=> window.location.reload())
@@ -35,7 +36,7 @@ const deleteQuote = (_id) => {
     setTimeout(()=> {
       if(user._id) { axios
         .get(
-        `${process.env.REACT_APP_SERVER_URL}/favourites/${user._id}`,
+        `${API_URL2}/favourites/${user._id}`,
       )
         .then((response) => setFavQuotes(response.data))
     

@@ -17,6 +17,7 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app";
 
 function App() {
  
@@ -45,7 +46,7 @@ function App() {
     // Send the token through the request "Authorization" Headers
     axios
       .get(
-      `${process.env.REACT_APP_SERVER_URL}/api/my-quotes`,
+      `${API_URL2}/api/my-quotes`,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
       .then((response) => setQuotes(response.data))
