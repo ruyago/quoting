@@ -18,6 +18,7 @@ import { queryByTestId } from "@testing-library/react";
 
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 
 function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
@@ -37,7 +38,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
   const getAllUsers = () => {
 
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/auth/userslist`)
+      .get(`${API_URL2}/auth/userslist`)
       .then((response) => setNames(response.data))
       .catch((error) => console.log(error));
   };

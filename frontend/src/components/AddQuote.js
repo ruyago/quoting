@@ -5,6 +5,7 @@ import axios from "axios";
 import { useContext } from "react";
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 function AddQuote({refreshQuotes}) {
   const [title, setTitle] = useState("");
@@ -24,7 +25,7 @@ function AddQuote({refreshQuotes}) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes`,
+        `${API_URL2}/api/my-quotes`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )

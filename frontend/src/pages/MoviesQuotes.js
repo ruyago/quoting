@@ -5,6 +5,7 @@ import QuoteCard from "../components/QuoteCard";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 
 const MoviesQuotes = ({ quotesMovies, refresh }) => {
@@ -18,7 +19,7 @@ const MoviesQuotes = ({ quotesMovies, refresh }) => {
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${process.env.REACT_APP_SERVER_URL}/api/movies-quotes`,
+        `${API_URL2}/api/movies-quotes`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then (()=> refresh())

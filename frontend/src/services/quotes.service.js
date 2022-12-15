@@ -4,7 +4,7 @@ class QuotesService {
   
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: API_URL2 || "http://localhost:5005"
     });
 
     // Automatically set JWT token in the headers for every request!!!!

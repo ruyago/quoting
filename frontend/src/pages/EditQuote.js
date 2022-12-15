@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from 'react-router-dom';
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 function EditQuote(props) {
   const [title, setTitle] = useState("");
@@ -19,7 +20,7 @@ function EditQuote(props) {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${quoteId}`,
+        `${API_URL2}/api/my-quotes/${quoteId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }    
       )
       .then((response) => {
@@ -42,7 +43,7 @@ function EditQuote(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .put(
-        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${quoteId}`,
+        `${API_URL2}/api/my-quotes/${quoteId}`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }              
       )
@@ -59,7 +60,7 @@ function EditQuote(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${quoteId}`,
+        `${API_URL2}/api/my-quotes/${quoteId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then(() => navigate("/my-quotes"))

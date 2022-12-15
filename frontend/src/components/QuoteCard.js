@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import UsersList from "../pages/UsersList";
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 // We are deconstructing props object directly in the parentheses of the function
 function QuoteCard ( { title, description, _id, owner, refresh, likes, setSelectedUser} ) {
@@ -23,7 +24,7 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes, setSelect
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${_id}`,
+        `${API_URL2}/api/my-quotes/${_id}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then (()=> refresh())
@@ -35,7 +36,7 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes, setSelect
     const userId = user._id; 
     axios
       .put(
-        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/add-like/${_id}`, {userId},   
+        `${API_URL2}/api/my-quotes/add-like/${_id}`, {userId},   
         { headers: { Authorization: `Bearer ${storedToken}` } }           
             
       )
@@ -49,7 +50,7 @@ const addFavourite = () => {
  const reqBody = { title, description, _id, owner, likes, user }
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_URL}/favourites`, reqBody
+        `${API_URL2}/favourites`, reqBody
       )
       .then((response) => { console.log(response)
         navigate("/favourites");

@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import "./LoginPage.css"
 
 const API_URL = "http://localhost:5005";
+const API_URL2 = "https://plain-belt.cyclic.app"
 
 
 function LoginPage(props) {
@@ -25,7 +26,7 @@ function LoginPage(props) {
     e.preventDefault();
     const requestBody = { email, password };
 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`, requestBody)
+    axios.post(`${API_URL2}/auth/login`, requestBody)
       .then((response) => {
         
         storeToken(response.data.authToken);
