@@ -23,7 +23,7 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes, setSelect
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${API_URL}/api/my-quotes/${_id}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${_id}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then (()=> refresh())
@@ -35,7 +35,7 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes, setSelect
     const userId = user._id; 
     axios
       .put(
-        `${API_URL}/api/my-quotes/add-like/${_id}`, {userId},   
+        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/add-like/${_id}`, {userId},   
         { headers: { Authorization: `Bearer ${storedToken}` } }           
             
       )
@@ -49,7 +49,7 @@ const addFavourite = () => {
  const reqBody = { title, description, _id, owner, likes, user }
     axios
       .post(
-        `${API_URL}/favourites`, reqBody
+        `${process.env.REACT_APP_SERVER_URL}/favourites`, reqBody
       )
       .then((response) => { console.log(response)
         navigate("/favourites");

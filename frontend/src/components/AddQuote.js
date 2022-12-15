@@ -24,7 +24,7 @@ function AddQuote({refreshQuotes}) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-        `${API_URL}/api/my-quotes`,
+        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )

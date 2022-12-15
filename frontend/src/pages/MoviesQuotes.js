@@ -18,7 +18,7 @@ const MoviesQuotes = ({ quotesMovies, refresh }) => {
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${API_URL}/api/movies-quotes`,
+        `${process.env.REACT_APP_SERVER_URL}/api/movies-quotes`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then (()=> refresh())

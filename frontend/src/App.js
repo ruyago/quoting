@@ -45,7 +45,7 @@ function App() {
     // Send the token through the request "Authorization" Headers
     axios
       .get(
-      `${API_URL}/api/my-quotes`,
+      `${process.env.REACT_APP_SERVER_URL}/api/my-quotes`,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
       .then((response) => setQuotes(response.data))
