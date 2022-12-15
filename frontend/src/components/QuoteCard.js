@@ -15,7 +15,7 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
   const [quotes, setQuotes] = useState([]);
   const [userWithLikes, setUserWithLikes] = useState()
   
-user && console.log(user)
+
   const deleteQuote = () => {
       
       const storedToken = localStorage.getItem('authToken'); 
@@ -44,7 +44,6 @@ user && console.log(user)
         refresh()})
       .catch((err) => console.log(err));
   }; 
-  console.log("sdf addFavourite", user._id)
 
 const addFavourite = () => {
  const reqBody = { title, description, _id, owner, likes, user }

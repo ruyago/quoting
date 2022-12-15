@@ -14,6 +14,7 @@ import quote from "../assets/quote.png"
 import Dropdown from 'react-bootstrap/Dropdown';
 import logo from "../assets/logo.png"
 import "./Dropdown.css"
+import { queryByTestId } from "@testing-library/react";
 
 
 const API_URL = "http://localhost:5005";
@@ -25,6 +26,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
 
   const [names, setNames] = useState([])
   const [selectedUser, setSelectedUser] = useState()
+  const [search, setSearch] = useState("")
 
   function refreshPage(){ 
     window.location.reload(); 
@@ -66,7 +68,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
             
             <br />
           
-            <input type="search" placeholder="    Search..." className="search"/>
+            <input type="search" value={search} placeholder="Search..." className="search" onChange={(l)=> setSearch(l.target.value)}/>
 
 
 
@@ -98,6 +100,21 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
 
       <div><AddQuote refreshQuotes={getAllQuotes} />
         <div className="QuoteCards">{filtered.length === 0 && !selectedUser ? quotes
+          .filter((quote)=> { return quote.description.toLowerCase().includes(search.toLowerCase())})
+          //Robot's work!!!
+          // .map((item, index) => {
+          //   // Check if the input value is present in the description
+          //   if (item.description.indexOf(search) !== -1) {
+          //     // Use substr to highlight the matching text
+          //     return <li key={index}>{item.description.substr(0, item.description.indexOf(search))}
+          //       <span className="highlight">{search}</span>
+          //       {item.description.substr(item.description.indexOf(search) + search.length)}
+          //     </li>
+          //   } else {
+          //     return <li key={index}>{item.description}</li>
+          //   }
+          // })
+        
           .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />) : filtered.length === 0 && selectedUser ? `No quotes`: filtered
           .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />)} </div>
       </div>
