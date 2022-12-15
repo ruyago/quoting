@@ -26,7 +26,9 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
   const [names, setNames] = useState([])
   const [selectedUser, setSelectedUser] = useState()
 
-
+  function refreshPage(){ 
+    window.location.reload(); 
+}
 
 
   const filtered = quotes.filter((quote) => { return quote.owner === selectedUser })
@@ -104,6 +106,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
           <ApiQuotes apiQuotes={apiQuotes}/>
             <p className="owner">{quote.author} </p>
             <p className="text">{quote.body}</p>
+            <button id="me" onClick={ refreshPage }>Random quote</button>
             
         </div>
       </div>
