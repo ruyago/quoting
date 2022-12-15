@@ -103,11 +103,10 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
       </div>
       <div className="MoreQuoteContainer">
         <div className="MoreQuote">
+            <h3>Random quotes</h3><br/><br/><br/>
           <ApiQuotes apiQuotes={apiQuotes}/>
-            <p className="owner">{quote.author} </p>
-            <p className="text">{quote.body}</p>
-            <button id="me" onClick={ refreshPage }>Random quote</button>
-            
+          
+
         </div>
       </div>
        
