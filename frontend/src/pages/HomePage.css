@@ -139,6 +139,7 @@ img {
 
 .FavouritesBlock h1{
     margin: auto;
+    padding-bottom: 1em;
 }
 
 #QuotesTitle {
@@ -148,6 +149,8 @@ img {
 
 #QuotesTitle h1 {
     margin: auto;
+    padding-bottom: 1em;
+    
 }
 .QuotesBlockH1{
     

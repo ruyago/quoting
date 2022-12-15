@@ -63,13 +63,13 @@ nav li {
   align-items: center;
   margin-left: -22em;
   margin-top: 7em;
-  padding: 15px 0;
+  padding: 15px 5px;
   width: 23em;
-  
+  border: 1px solid black;
   line-height: 18px;
   background: #eff3f4;
   border-radius: 50px;
-  height: 350px;
+  height: 80vh;
   position: fixed;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -144,7 +144,8 @@ nav li {
   justify-content: center;
   text-align: left;
   padding-top: 1.7em;
-  padding-left: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #2F3336;
   font-stretch: 100%;
