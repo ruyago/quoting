@@ -194,14 +194,16 @@ nav li {
 }
 
 #AddToFav {
-  background-color: rgb(183, 246, 248);
- padding: 8px;
+  color: white;
+  background-color: #0b5ed7;
+  padding: 8px;
   margin-bottom: 0.7em;
   margin-right: 0.5em;
+  border-radius: 6px;
 }
 
 #AddToFav:hover {
-  background-color: rgb(9, 148, 153);
+  background-color: #083f91;
 }
 .Interaction button:hover {
   background-color: #0a99f80b;
@@ -297,6 +299,9 @@ align-items: center;
   min-width: 36px;
   font-weight: 700;
   color: #ffffff;
+}
+.SubmitButton:hover{
+  background-color: #083f91;
 }
 
 .Left{

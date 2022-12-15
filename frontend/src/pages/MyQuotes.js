@@ -79,7 +79,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
             {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
           </div>
           <Dropdown>
-            <Dropdown.Toggle className="UserButtonColor">
+            <Dropdown.Toggle id="UserButtonColor">
               Users
             </Dropdown.Toggle>
 

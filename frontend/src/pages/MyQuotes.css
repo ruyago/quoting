@@ -35,14 +35,18 @@ h2 {
 
 
 #me {
-    background-color: #308cd9;
+    background-color: #0b5ed7;
     color: white;
-    font-size: 1em;
-    padding: 10px 10px;
+    font-size: 1.1rem;
+    padding: 5px 10px;
     border: 0;
-    border-radius: 25px;
-    height: auto;
-    width: 5em;
+    border-radius: 6px;
+    height: 2em;
+
+}
+
+#me:hover{
+    background-color: #083f91;
 }
 
 .MenuColor {
