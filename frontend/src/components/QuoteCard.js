@@ -69,7 +69,7 @@ const addFavourite = () => {
       <br /> 
       <br />
       <br />
-       <div className="Interaction">
+      <div className="Interaction">
        
         {owner !== user.name ? <><button className="buttonQuote" id="LikeButton" onClick={addLike} disabled={userWithLikes} >👍 <b className="Likes">{likes}</b></button> </> : <></>}
         {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>✖️</button> : <></>}
