@@ -73,7 +73,7 @@ nav li {
   border: 1px solid black;
   line-height: 18px;
   background: #eff3f4;
-  border-radius: 50px;
+  border-radius: 6px;
   height: 80vh;
   position: fixed;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -130,6 +130,7 @@ nav li {
   font-size: 1.1rem;
   line-height: 18px;
   background: #ffffff;
+  border-radius: 6px;
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -286,10 +287,10 @@ align-items: center;
 
 .SubmitButton{
   border: 0;
-  background-color: #308cd9;
+  background-color: #0b5ed7;
   padding: 0 16px 0 16px;
   font-size: 15px;
-  border-radius: 15px;
+  border-radius: 7px;
   height: 36px;
   min-height: 36px;
   min-width: 36px;
