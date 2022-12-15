@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+import Button from 'react-bootstrap/Button';
 
 const API_URL = "http://localhost:5005";
 
@@ -12,8 +13,9 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
   const {user} = useContext(AuthContext)
    const navigate = useNavigate() 
   const [quotes, setQuotes] = useState([]);
+  const [userWithLikes, setUserWithLikes] = useState()
   
-
+user && console.log(user)
   const deleteQuote = () => {
       
       const storedToken = localStorage.getItem('authToken'); 
@@ -30,14 +32,16 @@ function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
   const addLike = () => {
     const storedToken = localStorage.getItem('authToken'); 
 
-    // Send the token through the request "Authorization" Headers   
+    const userId = user._id; 
     axios
       .put(
-        `${API_URL}/api/my-quotes/add-like/${_id}`,    
+        `${API_URL}/api/my-quotes/add-like/${_id}`, {userId},   
         { headers: { Authorization: `Bearer ${storedToken}` } }           
             
       )
-      .then (()=> refresh())
+      .then ((response)=> {
+        response.data.userLikes.includes(_id) ? setUserWithLikes(true) : setUserWithLikes(false);
+        refresh()})
       .catch((err) => console.log(err));
   }; 
   console.log("sdf addFavourite", user._id)
@@ -67,9 +71,10 @@ const addFavourite = () => {
       <br />
        <div className="Interaction">
        
-        {owner !== user.name ? <><button className="buttonQuote" id="LikeButton" onClick={addLike}>👍 <b className="Likes">{likes}</b></button> </> : <></>}
+        {owner !== user.name ? <><button className="buttonQuote" id="LikeButton" onClick={addLike} disabled={userWithLikes} >👍 <b className="Likes">{likes}</b></button> </> : <></>}
         {owner === user.name ? <button className="buttonQuote" onClick={deleteQuote}>✖️</button> : <></>}
-        {<button id="AddToFav" onClick={addFavourite}>⭐</button>}
+    
+        {<button id="AddToFav" onClick={addFavourite}>Save quote</button>}
         
        </div>
     </div>
