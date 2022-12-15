@@ -115,7 +115,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
           //   }
           // })
         
-          .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />) : filtered.length === 0 && selectedUser ? `No quotes`: filtered
+          .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} setSelectedUser={setSelectedUser } />) : filtered.length === 0 && selectedUser ? `No quotes`: filtered
           .map((quote) => <QuoteCard key={quote._id} {...quote} refresh={getAllQuotes} />)} </div>
       </div>
       <div className="MoreQuoteContainer">

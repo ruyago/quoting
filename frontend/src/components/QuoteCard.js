@@ -4,18 +4,18 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import Button from 'react-bootstrap/Button';
+import UsersList from "../pages/UsersList";
 
 const API_URL = "http://localhost:5005";
 
 // We are deconstructing props object directly in the parentheses of the function
-function QuoteCard ( { title, description, _id, owner, refresh, likes} ) {
+function QuoteCard ( { title, description, _id, owner, refresh, likes, setSelectedUser} ) {
   
   const {user} = useContext(AuthContext)
    const navigate = useNavigate() 
   const [quotes, setQuotes] = useState([]);
   const [userWithLikes, setUserWithLikes] = useState()
-  
-
+  const [names, setNames] = useState([])
   const deleteQuote = () => {
       
       const storedToken = localStorage.getItem('authToken'); 
@@ -64,7 +64,10 @@ const addFavourite = () => {
     
       
 
-      <p className="text" style={{ maxWidth: "400px" }}>"{description}." <b className="owner">- {owner} -</b> </p>
+      <p className="text" style={{ maxWidth: "400px" }}>"{description}."
+      
+      <UsersList names={names} setSelectedUser={setSelectedUser} /><br /> 
+      <b className="owner" onClick={() => {setSelectedUser(owner)}}>- {owner} -</b> </p>
       <br /> 
       <br />
       <br />

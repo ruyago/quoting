@@ -144,7 +144,12 @@ nav li {
   font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #2F3336;
   font-style: italic;
+  cursor: pointer;
+
 }
+
+.owner:hover{
+  color: rgb(11,94,215);}
 
 .text {
   justify-content: center;
