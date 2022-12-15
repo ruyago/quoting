@@ -45,6 +45,7 @@ textarea {
   width: 400px;
   height: 130px;
   resize: none;
+  outline: none;
 }
 
 nav {
