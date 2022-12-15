@@ -63,7 +63,7 @@ function App() {
       <Routes>      
     
         <Route path="/" element={<HomePage  quotes={quotes}/>} />
-        <Route path="/favourites" element={<FavouritesQuotes  favQuotes={favQuotes} refresh={getAllQuotes}/>} />
+        <Route path="/favourites" element={<IsPrivate><FavouritesQuotes  favQuotes={favQuotes} refresh={getAllQuotes}/></IsPrivate>} />
         <Route path="/favourites/:user_id" element={<FavouritesQuotes  favQuotes={favQuotes}/>} />
        
         
