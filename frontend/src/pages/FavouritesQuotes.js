@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
@@ -54,11 +53,11 @@ const deleteQuote = (_id) => {
 
 
 
-<div className="">
+<div className="FavouritesPage">
     <div className="myQuotesPage">
       <div>
   
-        <div className="UserContainer">
+        <div className="Left">
           
           <div className="UserList">
             
@@ -80,14 +79,6 @@ const deleteQuote = (_id) => {
       </div>
 
 
-      
-      <div className="MoreQuoteContainer">
-        <div className="MoreQuote">
-            
-          
-            <div id="TopQuotes">Random quote</div>
-        </div>
-      </div>
        
      </div>
 </div> 

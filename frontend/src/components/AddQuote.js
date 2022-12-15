@@ -1,4 +1,4 @@
-
+import "../index.css"
 import { AuthContext } from "../context/auth.context";
 import { useState } from "react";
 import axios from "axios";
@@ -44,11 +44,9 @@ function AddQuote({refreshQuotes}) {
     <h3>Add Quote</h3>
 
       <form onSubmit={handleSubmit}>
-
         
-      
         <textarea
-          type="text"
+
           placeholder="Your quote..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
