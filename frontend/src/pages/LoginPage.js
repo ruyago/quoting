@@ -40,7 +40,8 @@ function LoginPage(props) {
   };
   
   return (
-
+    <div id="loginpage">
+    
     <container className="LoginPage">
     <div className="login">
       <br/>
@@ -50,12 +51,12 @@ function LoginPage(props) {
       <form onSubmit={handleLoginSubmit}>
         
         <div className="input" >
-          <input placeholder="Email" className="Inputs" type="email" name="email" value={email} onChange={handleEmail} />
+          <input placeholder="Email" id="inputs" type="email" name="email" value={email} onChange={handleEmail} />
         </div>
         
 
         <div className="input" >
-          <input placeholder="Password" className="Inputs" type="password" name="password" value={password} onChange={handlePassword} />
+          <input placeholder="Password" id="inputs" type="password" name="password" value={password} onChange={handlePassword} />
         </div>
 
 
@@ -70,7 +71,7 @@ function LoginPage(props) {
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-    </div></container>
+    </div></container></div>
   )
 }
 

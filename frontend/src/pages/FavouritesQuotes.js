@@ -6,10 +6,9 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../index.css"
 import Button from 'react-bootstrap/Button';
-
+import "./FavPage.css"
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import logo from "../assets/logo.png"
 
 
 
@@ -54,38 +53,46 @@ const deleteQuote = (_id) => {
 
 
 <div className="FavouritesPage">
-    <div className="myQuotesPage">
+    
       <div>
   
-        <div className="Left">
-          
+      <div className="UserContainer">
+          <Link to="/">
+            <img className="logo" src={logo} alt="logo" />
+          </Link>
+
           <div className="UserList">
             
             <br />
           
-              
-              <p>Favourite</p>
+            <input type="search" placeholder="    Search..." className="search"/>
+
+
 
             <ul id="LeftList">
               <li><Link to="/"><button>Home</button></Link></li>
-              <li><Link to="/my-quotes"><button>Quotes</button></Link></li>
+              <li><Link to="/my-quotes"><button>Quotes Page</button></Link></li>
               <li><button onClick={logOutUser}>Logout</button></li>
             </ul>
             {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}
             {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
           </div>
+                
+        </div>
           
         </div>
-      </div>
-      <div>
+      
       {favQuotes.length && favQuotes?.map((favQuote) =>{
-        return <div className="cards">{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
+        return <div className="FavPageCardContainer">
+                <div className="cards"> <p className="text" style={{ maxWidth: "400px" }}>"{favQuote.description}." <b className="owner">- {favQuote.owner} -</b> </p><button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
+              </div>
       })}
+      <div>
+      
  </div>
 
        
      </div>
-</div> 
 </>
   )
 }
