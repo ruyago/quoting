@@ -54,8 +54,9 @@ const deleteQuote = (_id) => {
 <div className="FavouritesPage">
     
       <div>
-  
+         
       <div className="UserContainer">
+        
           <Link to="/">
             <img className="logo" src={logo} alt="logo" />
           </Link>
@@ -64,7 +65,7 @@ const deleteQuote = (_id) => {
             
             <br />
           
-            <input type="search" placeholder="    Search..." className="search"/>
+            <input type="search" placeholder="Search..." className="search"/>
 
 
 
@@ -78,12 +79,12 @@ const deleteQuote = (_id) => {
           </div>
                 
         </div>
-          
+         <p className="FavTitle">My favourite quotes</p>
         </div>
       
       {favQuotes.length && favQuotes?.map((favQuote) =>{
         return <div className="FavPageCardContainer">
-                <div className="cards"> <p className="text" style={{ maxWidth: "400px" }}>"{favQuote.description}." <b className="owner">- {favQuote.owner} -</b> </p><button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
+                <div className="cards"> <p className="text" style={{ maxWidth: "400px" }}>"{favQuote.description}." <b className="owner">- {favQuote.owner} -</b> </p><button id="DeleteFav" className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
               </div>
       })}
       <div>

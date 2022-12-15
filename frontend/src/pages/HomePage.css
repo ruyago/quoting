@@ -117,6 +117,7 @@ img {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-left: 15vh;
 }
 
 .QuotesBlock input{
@@ -150,6 +151,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 15vh;
 }
 
 
@@ -158,6 +160,28 @@ img {
     margin: auto;
     padding-bottom: 1em;
     font-family: a;
+    
+}
+
+
+
+
+.LogoutHome{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.LogoutHome p{
+    font-size: 35px;
+    color: white;
+   
+}
+
+.LogoutHomeWImg p:hover{
+    color: #000000;
 }
 
 
@@ -172,6 +196,22 @@ img {
     font-family: a;
     
 }
-.QuotesBlockH1{
+
+.FavouritesBlock h1:hover{
+    color: rgb(0, 0, 0);
+}
+
+#QuotesTitle h1:hover{
+    color: rgb(0, 0, 0);
+}
+
+#HomeLogout {
+    background-color: transparent;
+    border: 0;
     
+
+}
+
+#NoUnderline{
+    text-decoration: none;
 }

@@ -76,7 +76,7 @@ header {
 .search{
     border-radius: 6px;
     border: 0;
-
+    outline: none;
     padding: 0.5em;
     height: auto;
     width: auto;
