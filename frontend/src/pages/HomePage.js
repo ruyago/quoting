@@ -58,7 +58,7 @@ singleQuote && console.log(singleQuote)
 
         <div className="QuotesBlock">
           <div id="QuotesTitle">
-            <h1 >Quotes</h1>
+            <h1>Quotes Page</h1>
           </div>
           <Link to="/my-quotes"> <input type="image" name="" id="" src="https://images.unsplash.com/photo-1606607291535-b0adfbf7424f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" /></Link>
         </div> 

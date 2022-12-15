@@ -32,8 +32,9 @@ position: absolute;
     
 }
 
-.inputs{
-    
+#inputs{
+    background-color: white;
+
 }
   
 .input{

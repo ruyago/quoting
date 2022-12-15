@@ -41,19 +41,21 @@ function AddQuote({refreshQuotes}) {
   return (
     <div className="AddQuote">
      <div> 
-    <h3>Add Quote</h3>
+        <h3>Add Quote</h3>
 
-      <form onSubmit={handleSubmit}>
-        
-        <textarea
+          <form onSubmit={handleSubmit}>
+            
+            <textarea
+              id="textarea"
+              maxLength={150}
+              placeholder="Your quote..."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
 
-          placeholder="Your quote..."
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <br/>
-        <button className="SubmitButton" type="submit">Submit</button>
-      </form>
+            <br/>
+            <button className="SubmitButton" type="submit">Submit</button>
+          </form>
       </div>
     </div>
   );

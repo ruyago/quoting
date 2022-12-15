@@ -80,20 +80,11 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
             {/* <button className="ButtonMyQuotes" onClick={() => {setSelectedUser(user.name)}}>{user.name}</button> */}
             {/* <h4 className="UserButtons"><UsersList names={names}  setSelectedUser={setSelectedUser}/></h4> */}
           </div>
-          <Dropdown>
-            <Dropdown.Toggle id="UserButtonColor">
-              Users
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu className="MenuColor">
-              <h4 className="Users">
-                <button id="me" onClick={()=>{setSelectedUser()}}>Everyone</button>
+                <button id="me" onClick={()=>{setSelectedUser(user.name)}}>My quotes only</button>
                 <br />
-                <button id="me" onClick={()=>{setSelectedUser(user.name)}}>Me</button>
-                <UsersList names={names} setSelectedUser={setSelectedUser} />
-              </h4>
-            </Dropdown.Menu>
-          </Dropdown>
+                <br />
+                <button id="me" onClick={()=>{setSelectedUser()}}>Every quotes</button>
+
         </div>
       </div>
 
