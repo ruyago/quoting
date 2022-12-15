@@ -77,7 +77,11 @@ const deleteQuote = (_id) => {
           
         </div>
       </div>
-
+      <div>
+      {favQuotes.length && favQuotes?.map((favQuote) =>{
+        return <div className="cards">{favQuote.description} - @{favQuote.owner}<button className="buttonQuote" onClick={(e)=>{deleteQuote(favQuote._id)}}>Delete</button></div>
+      })}
+ </div>
 
        
      </div>
