@@ -32,7 +32,7 @@ textarea {
   width: 350px;
   height: 50px;
   border: 0px;
-  background-color:  white;
+  background-color:  #eff3f4;
   color: #080808;
   text-decoration: none;
   border: 0;
@@ -136,7 +136,7 @@ nav li {
 
 
 .cards:hover{
-  background-color: #cccccc3d;
+  background-color: #eff3f4;
 }
 
 .owner{
@@ -221,6 +221,10 @@ nav li {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 1em;
+  background-color: #eff3f4;
+  padding: 1em 1em;
+  border-radius: 6px;
 }
 ::placeholder{
   color: #7e7e7e;
@@ -247,11 +251,20 @@ nav li {
 }
 
 .UserContainer {
+  background-color: #eff3f4;
   border-right: 1px solid #d1d3d4;
   height: 100%;
   position: fixed;
   
   
+}
+
+.UserContainer img{
+  margin-top: 1em;
+}
+
+.UserContainer:hover {
+  background-color: #eff3f4;
 }
 
 .UsersList {
@@ -276,6 +289,7 @@ align-items: center;
   font-size: 1.5em;
   text-align: center;
   padding: 0.4em;
+  border-radius: 6px;
 
 }
 
