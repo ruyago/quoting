@@ -7,8 +7,6 @@ import QuoteDetails from "./pages/QuoteDetails";
 import EditQuote from "./pages/EditQuote";
 import React, { useEffect, useState } from "react";
 import Data from "./pages/Quotes.json"
-import MoviesQuotes from "./pages/MoviesQuotes"
-import ApiQuotes from "./pages/ApiQuotes"
 import FavouritesQuotes from "./pages/FavouritesQuotes";
 
 import axios from "axios";
@@ -39,7 +37,6 @@ function App() {
       setApiQuotes(responseAPI)
       getAllQuotes()
   }, []);
-  console.log(apiQuotes)
 
   const getAllQuotes = () => {
     // Get the token from the localStorage
