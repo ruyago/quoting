@@ -37,7 +37,7 @@ function MyQuotes({ apiQuotes, getAllQuotes, quotes }) {
   const getAllUsers = () => {
 
     axios
-      .get(`${API_URL}/auth/userslist`)
+      .get(`${process.env.REACT_APP_SERVER_URL}/auth/userslist`)
       .then((response) => setNames(response.data))
       .catch((error) => console.log(error));
   };

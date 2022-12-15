@@ -19,7 +19,7 @@ function EditQuote(props) {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `${API_URL}/api/my-quotes/${quoteId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${quoteId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }    
       )
       .then((response) => {
@@ -42,7 +42,7 @@ function EditQuote(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .put(
-        `${API_URL}/api/my-quotes/${quoteId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${quoteId}`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }              
       )
@@ -59,7 +59,7 @@ function EditQuote(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${API_URL}/api/my-quotes/${quoteId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/my-quotes/${quoteId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
       .then(() => navigate("/my-quotes"))

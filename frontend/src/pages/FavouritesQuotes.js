@@ -24,7 +24,7 @@ function FavouritesQuotes({refresh}) {
 const deleteQuote = (_id) => {
   axios
     .put(
-      `${API_URL}/favourites/${_id}`, user
+      `${process.env.REACT_APP_SERVER_URL}/favourites/${_id}`, user
                  
     )
     .then (()=> window.location.reload())
@@ -35,7 +35,7 @@ const deleteQuote = (_id) => {
     setTimeout(()=> {
       if(user._id) { axios
         .get(
-        `${API_URL}/favourites/${user._id}`,
+        `${process.env.REACT_APP_SERVER_URL}/favourites/${user._id}`,
       )
         .then((response) => setFavQuotes(response.data))
     
