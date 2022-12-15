@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 import Button from 'react-bootstrap/Button';
+import "./LoginPage.css"
 
 const API_URL = "http://localhost:5005";
 
@@ -39,6 +40,8 @@ function LoginPage(props) {
   };
   
   return (
+
+    <container className="LoginPage">
     <div className="login">
       <br/>
       <h1 className="legend">Login</h1>
@@ -67,7 +70,7 @@ function LoginPage(props) {
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-    </div>
+    </div></container>
   )
 }
 

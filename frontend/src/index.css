@@ -188,16 +188,17 @@ nav li {
 }
 
 #AddToFav {
-  background-color: white;
+  background-color: rgb(183, 246, 248);
+ padding: 8px;
   margin-bottom: 0.7em;
   margin-right: 0.5em;
 }
 
 #AddToFav:hover {
-  background-color: #0000000b;;
+  background-color: rgb(9, 148, 153);
 }
 .Interaction button:hover {
-  background-color: #0000000b;
+  background-color: #0a99f80b;
 
 }
 
